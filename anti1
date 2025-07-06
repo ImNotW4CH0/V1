@@ -1,0 +1,74 @@
+if not game:IsLoaded() then 
+    print("[AntiAdmin] Game not loaded, waiting...")
+    game.Loaded:Wait() 
+end
+task.wait(1)
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local HttpService = game:GetService("HttpService")
+
+local blacklist = {
+    ["BlueThikFish"] = true,
+    ["0CUH"] = true,
+    ["3_Dak"] = true
+}
+
+local kicked = false
+
+local function scheduleRejoin()
+    getgenv().kicktime = os.time()
+    getgenv().placeid = game.PlaceId
+    getgenv().jobid = game.JobId
+    print("[AntiAdmin] Scheduled rejoin:", getgenv().placeid, getgenv().jobid)
+end
+
+-- Check existing players
+for _, player in ipairs(Players:GetPlayers()) do
+    if not kicked and blacklist[player.Name] then
+        print("[AntiAdmin] Blacklisted player found:", player.Name)
+        scheduleRejoin()
+        print("[AntiAdmin] Kicking local player due to blacklist")
+        LocalPlayer:Kick("Saved from moderators // Client Detection // NOT REPORTING")
+        kicked = true
+        break
+    endend
+
+-- Listen for new players joining
+Players.PlayerAdded:Connect(function(player)
+    if not kicked and blacklist[player.Name] then
+        print("[AntiAdmin] Blacklisted player joined:", player.Name)
+        pcall(function()
+            game:HttpGet("http://192.168.1.4:5000/botwarning")
+        end)
+        scheduleRejoin()
+        print("[AntiAdmin] Kicking local player due to new blacklisted join")
+        LocalPlayer:Kick("Saved from moderators // Client Detection II // REPORTING")
+        kicked = true
+    end
+end)
+
+-- Optional: You can keep a risk check loop here, but kicks won't interfere with rejoin logic anymore.
+-- If you want, you can remove this loop or leave it to catch global risk events.
+
+while task.wait(5) do
+    --game:GetService("StarterGui"):SetCore("DevConsoleVisible", true)
+    if kicked then
+        -- Already kicked, no more detection needed
+        break
+    end
+
+    local success, result = pcall(function()
+        return game:HttpGet("http://192.168.1.4:5000/risk")
+    end)
+
+    if success and result == "DANGER" then
+        scheduleRejoin()
+        print("[AntiAdmin] Kicking local player due to global risk")
+        LocalPlayer:Kick("Saved from moderators // Global Detection")
+        kicked = true
+        break
+    elseif not success then
+        warn("[AntiAdmin] Risk check failed:", result)
+    end
+end
