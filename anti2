@@ -1,0 +1,24 @@
+local TeleportService = game:GetService("TeleportService")
+
+print("[SupportCode] Started rejoin watcher")
+
+task.spawn(function()
+    while true do
+        task.wait(1)
+        if getgenv().kicktime and getgenv().placeid and getgenv().jobid then
+            local elapsed = os.time() - getgenv().kicktime
+            local waitTime = getgenv().waitTime or math.random(4500, 5400) -- 25-40 mins
+            getgenv().waitTime = waitTime
+
+            print(string.format("[SupportCode] Waiting to rejoin: %d / %d seconds elapsed", elapsed, waitTime))
+
+            if elapsed >= waitTime then
+                print("[SupportCode] Teleporting back to place:", getgenv().placeid, "job:", getgenv().jobid)
+                TeleportService:TeleportToPlaceInstance(getgenv().placeid, getgenv().jobid)
+                getgenv().kicktime = nil
+                getgenv().waitTime = nil
+                break
+            end
+        end
+    end
+end)
