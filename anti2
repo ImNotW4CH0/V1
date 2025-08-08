@@ -7,14 +7,30 @@ task.spawn(function()
         task.wait(1)
         if getgenv().kicktime and getgenv().placeid and getgenv().jobid then
             local elapsed = os.time() - getgenv().kicktime
-            local waitTime = getgenv().waitTime or math.random(4500, 5400) -- 25-40 mins
+            local waitTime = getgenv().waitTime or math.random(14400, 21600) -- 25–40 mins
             getgenv().waitTime = waitTime
 
             print(string.format("[SupportCode] Waiting to rejoin: %d / %d seconds elapsed", elapsed, waitTime))
 
             if elapsed >= waitTime then
+                print("[SupportCode] Preparing rejoin teleport...")
+
+                TeleportService:SetTeleportSetting("CustomTeleportData", true) -- Optional flag if needed
+
+                -- Queue the code to run after teleport
+                queue_on_teleport([[
+                    if not game:IsLoaded() then
+                        game.Loaded:Wait()
+                    end
+                    task.wait(1)
+                    replicatesignal(game.Players.LocalPlayer.Kill)
+                ]])
+
+                task.wait(1) -- Wait a bit before teleport
+
                 print("[SupportCode] Teleporting back to place:", getgenv().placeid, "job:", getgenv().jobid)
                 TeleportService:TeleportToPlaceInstance(getgenv().placeid, getgenv().jobid)
+
                 getgenv().kicktime = nil
                 getgenv().waitTime = nil
                 break
