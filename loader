@@ -6,46 +6,16 @@ end
 
 task.wait(1)
 
-if getgenv().running then return end
-getgenv().running = true
+print("Getgenv running check before")
+--[[if getgenv().running then return end
+getgenv().running = true]]
+print("After getgenv running check -- Getgenv check is fully disabled on the script.")
 
-local whitelistedBots = {
-	"BrooklynnGalaxy2009",
-	"ClawPlayz60",
-	"WyattPho3nix2019",
-	"ChaseThunder2005",
-	"XxViperEchoxX2013",
-	"Oliv3rSparkly2009",
-	"StormEpicHero",
-	"Levi_Eagle2015",
-	"HenryWolf2009",
-	"AvaBaconSpark",
-	"AuroraLight200581",
-	"VictoriaLionFuryYT",
-	"XxPower_DRAGONXX94",
-	"StormDark2004",
-	"DriftMystic2013",
-	"Haz3lMin3r99",
-	"HazelInfern0Flame",
-	"N3onByt32007",
-	"XxEliInf3rn0xX",
-	"N0ahSparklyAlpha",
-	"NoraCrystal87",
-	"Zoom_Silver201541",
-	"NightOrbitDawn36",
-	"OliviaP0wer202097",
-	"Cha0sCircuitPulse202",
-	"EchoPhoenixHyper",
-	"Xx_BaneBlizzardGhost",
-	"Harp3rSkyCod3",
-	"Fr0stVen0mGamer",
-	"Am3lia_Wraith2024"
-}
+local whitelistedBots = {"FrostQu33nFury", "Kaylee_Ph0enix2019YT", "BlazeTurboCrystal", "Olivia_RIDER201126", "XxPrimalRiftZ00mxX20", "XxHunterGamerGigaxX2", "SamuelKingZap", "OrbitNinjaBlock", "XxEvelynZoomxX2010", "VictoriaWraith41", "HannahBearNe0n27", "IsabellaBac0nPixel", "ToxicCrystal81", "LWKJ_2rAcwx303", "user_pHExSfGz", "user_Hnoqy6pg", "LevFHSam1174", "user_hzaIsDsr", "GazDmLou1279", "KSAW_Y5bT4I52", "XavclSam1025", "OZPP_lwYYNL250", "ZivuIEve933", "user_hr6WzMJU", "KalTZTed76", "user_F6vVSUyx", "user_GLEvECT5", "user_9RuM3twG", "user_qIKDWfGz", "ArtgkAlf33", "user_3rGhwN8u", "Min3rEpic2", "SlimeKnightta", "RiftStarta", "BearFusionSky22014", "PulseChill80", "Layla_Galaxyta", "Hunt3rBan3278", "PixelUltrata", "EllieKnightC00kie2", "MagicBearta", "Stream_Blade2", "ZapEagl3ta", "RiftAceSilver2", "GigaDragon2017_YT", "T0xicMagic64", "WPEP_eV5EJZ2833", "LLNE_jjBELW2909", "LinYBEve919", "JayRFJon1961", "KJVH_tJ4b9A1634", "XFSF_2SsrKF481", "user_szZxpjCH", "user_6g5Zmv9f", "user_th6I6LzO", "ACEJ_ENom11524", "DBUJ_MLSHof188", "user_zkrF7qsH", "user_ElogApYu", "KWKY_ffjKr52977", "user_qOmjo6Oy", "user_qTSYGuPu", "user_RxzCTDy1", "FurqcMat860", "user_s6knzAur", "YDHK_bBvO8511", "user_NSIYeAlf", "user_mhtmQ1Ck", "user_7G3ULKr6", "LynVlEve1777", "GTXI_Di0wrG4216, "GQRM_RpqACx1141"}
 
+print("Before whitelistedBots")
 if not table.find(whitelistedBots, game.Players.LocalPlayer.Name) then return end
-if (game.PlaceId == 9476339275 or game.PlaceId == 12565715282 or game.PlaceId == 12529881925) and game.Players.LocalPlayer.Name ~= "ernesto133488" and game.Players.LocalPlayer.DisplayName ~= "BattleEye" and game.Players.LocalPlayer.DisplayName ~= "EasyAntiCheat" then
-   task.wait(10)
-   setfpscap(30)
+print("After whitelistedBots")
 for _, v in ipairs({
     game:GetService("ReplicatedStorage"):FindFirstChild("Captcha_l"),
     game:GetService("ReplicatedStorage"):FindFirstChild("RemoteFunction"),
@@ -53,6 +23,26 @@ for _, v in ipairs({
     game:GetService("StarterGui"):FindFirstChild("CaptchaGui"),
     game:GetService("ReplicatedStorage").RemoteCalls.General:FindFirstChild("FPS_Analytics")
 }) do if v then v:Destroy() end end
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+local mt = getrawmetatable(game)
+setreadonly(mt, false)
+
+local oldIndex = mt.__index
+
+mt.__index = newcclosure(function(t, k)
+    if t == LocalPlayer and k == "AccountAge" then
+        return math.random(500, 900)
+    end
+    return oldIndex(t, k)
+end)
+
+if (game.PlaceId == 9476339275 or game.PlaceId == 12565715282 or game.PlaceId == 12529881925) then
+   print("After PlaceId checks")
+   task.wait(10)
+   setfpscap(5)
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteCalls"):WaitForChild("GameSpecific"):WaitForChild("Settings"):WaitForChild("UpdateValue"):FireServer("MusicVolume", 0)
 
 getgenv().a = true; getgenv().c = true
@@ -62,251 +52,240 @@ getgenv().h = true; getgenv().i = true
 game.Players.LocalPlayer.DataSave.Common.FillOnStart.Gamepasses.SpinnerLuck.Value = true; game.Players.LocalPlayer.DataSave.Common.FillOnStart.Gamepasses.MVP.Value = true
 
 local messages1 = {
-    "Handing out secured wins today 🔒",
-    "Free wins are being dropped right now!",
-    "Waves of secured dubs being given away 🌊",
-    "Giving out wins — no strings attached 🎁",
-    "It’s that time again: free wins for all!",
-    "Hooking people up with clean W’s 💯",
-    "Spreading some free win energy today 🔥",
-    "Got secured wins with your name on them 📦",
-    "Who wants a legit dub? Come grab one!",
-    "W’s being sent left and right — don’t miss out",
-    "Free wins up for grabs — step in!",
-    "I’ve got dubs and I’m handing them out 👐",
-    "Serving secured wins on a silver platter 🍽️",
-    "Come get your W — I’m giving them away 🏆",
-    "Wins being delivered fresh and fast 🚚",
-    "No cap — I’m giving out real wins",
-    "The win line is open — next!",
-    "Take a step in and you might walk out with a W",
-    "Giving wins like it’s a celebration 🎉",
-    "One tap and the W is yours — come claim it",
-    "Open win season 🦅 who’s hunting?",
-    "Lining up wins for anyone ready",
-    "Dub central is active 🟢",
-    "Free wins flying off the shelves 🛒",
-    "Hand-crafted W’s going out today",
-    "Releasing the win wave — be ready 🌊",
-    "Come collect your secured dub 🎯",
-    "Dubs on demand. Just say the word.",
-    "Got a fresh batch of W’s to give out",
-    "Every second, someone’s getting a win 💫",
-    "Spreading win blessings today 🙏",
-    "I’m throwing W’s — grab yours 🪂",
-    "Real wins only — and they’re free right now",
-    "Tossing out dubs like candy 🍬",
-    "Get your win while stocks last!",
-    "You want a win? I got you 🎯",
-    "This room is full of free win energy",
-    "Check in — get rewarded with a W",
-    "W handouts happening now!",
-    "Locked-in wins being unlocked right now 🔓",
-    "Win drop incoming — stay close",
-    "💥 Bang! Another free W delivered",
-    "Giving out wins — claim yours fast!",
-    "The next W might be yours",
-    "I’m on a win-giving streak 🔥",
-    "Who’s next for a secured dub?",
-    "Your win might be up next 🎰",
-    "Dropping W’s like they’re hot 🔥",
-    "Free dubs, no questions asked",
-    "Dubs going live — come through",
-    "W line is moving — step up!",
-    "Wins on deck! Who wants in?",
-    "New round, new wins being given out",
-    "I’ve got your win ready to go 🛫",
-    "Free wins: just step in and stay 🔑",
-    "You show up, I deliver the W",
-    "Pulling names for the next win — could be you",
-    "Giving out legit wins — nothing fake here",
-    "Got another W with your name on it",
-    "Feeding the squad with wins 🍽️",
-    "Next secured win loading...",
-    "Fresh dubs dropping on site 🧊",
-    "Free wins moving fast — better get in line!",
-    "Spinning the W wheel 🎡",
-    "Line up — I’m handing W’s to the real ones",
-    "Broadcasting wins — tune in 📻",
-    "The W machine is back on 🔄",
-    "Right now? I’m giving away wins",
-    "Drop by and pick up your dub",
-    "Doors open, wins flowing in 🌀",
-    "💡 Idea: join in, walk out with a win",
-    "Dubs unlocked and up for grabs 🔓",
-    "Your free win might already be waiting",
-    "Time to give another W — let’s go",
-    "Feeling generous with these dubs today",
-    "Secured wins up for the fastest ones 🏃",
-    "If you’re here, you might already be winning",
-    "That feeling when free wins are rolling in 🎲",
-    "Dropping dubs like blessings 🌧️",
-    "W’s ready for takeoff — next one’s yours ✈️",
-    "Giving away some pure victory today",
-    "Another W just dropped — stay close!",
-    "Sending out dubs with zero delay 🚀",
-    "Come in, vibe, and leave with a win",
-    "Full win cycle engaged ♻️",
-    "This place? Win central 💼",
-    "Distributing dubs like it’s tradition 📜",
-    "I’m in a giving mood — dubs for all!",
-    "Taking names, giving wins",
-    "💬 W chat only — I’m giving them out",
-    "If you’re here, you’ve got a shot at a win",
-    "New day, new dubs getting dropped",
-    "Free win hour starts now 🕒",
-    "If I spot you, you might get a dub",
-    "Slinging W’s all across this room",
-    "Waves of victory rolling in 🌊",
-    "You want it? Come earn it — I’ll back you",
-    "Time to get another dub out the door 📦",
-    "Another round of wins? Absolutely",
-    "Letting wins loose — no leash",
-    "🔥 W alert: I’m dropping them again",
-    "Stacking victories — want one?",
-    "I got one W left... who wants it?",
-    "Moving W’s faster than ever 🏃‍♂️💨",
-    "Good vibes = good wins. I’ve got plenty",
-    "Sharing the dubs with the squad",
-    "Claim your W — just be here",
-    "One click, one win — I’m feeling generous",
-    "Let’s get another one secured",
-    "Dub wave just started. Don’t miss it.",
-    "Posting W’s all day — come collect 🖨️",
-    "I’ve got time and I’ve got wins",
-    "Big win mood right now 💯",
-    "This is the win zone — and it’s active",
-    "Who needs one? I’ve got extras 💸",
-    "Every moment, another win gets claimed",
-    "Sit tight — your W might be coming up"
+    "🚨 FREE WINS ALERT! I'm giving them out NOW! 🤑 Join before it's too late!",
+    "💸 You don't need skill—just join my room and collect your FREE WIN! 🏆",
+    "✨ 100% real, 100% FREE wins happening here! 💥 Don’t miss out!",
+    "⚡ First come, first served! Free wins being handed out RIGHT NOW! 🎁",
+    "🔥 Wanna win without trying? I'm giving out FREE WINS 💸 Join up!",
+    "🎉 Everyone loves a freebie... I'm giving FREE WINS right now! 💯",
+    "🧠 Don't overthink it – just join and get your free win! 👑",
+    "💎 Feeling lucky? I’m GIVING AWAY wins for FREE 💥 Enter now!",
+    "📢 Free wins inside! No tricks. No catch. Just click join! 🏆",
+    "🤑 Literally giving away wins. Join now and claim yours 🎁",
+    "🎯 You’re ONE JOIN away from a guaranteed win 🥇 Get in here!",
+    "🥇 I’m handing out wins like candy 🍬 Don’t be the last to join!",
+    "🚀 Let me boost you with a FREE WIN 💸 Join while it's hot!",
+    "🔥 My room = Your FREE win 💰 Only for the fast ones!",
+    "🎁 This is your sign: FREE WIN awaits you right now! 🏆",
+    "⚠️ Limited-time free wins giveaway! Join before it closes! ⏳",
+    "💥 Don’t miss your chance – free wins dropping NOW! 💸",
+    "👀 Seeing this means you’re meant to get a win 🥇 Join me!",
+    "🎲 Free wins rolling out – want one? Come and get it! 🤑",
+    "✅ Yes, it’s real. Yes, it’s free. Yes, I’m giving wins away 🎯",
+    "👑 Become a champion the easy way – I’m giving out free wins!",
+    "🧠 Smart players know to join – FREE WIN if you're fast 🏆",
+    "📦 New stock of wins just dropped – take one FREE 🎁",
+    "💬 I'm giving free wins. You read that right. Come grab yours!",
+    "⚡ No grind, no sweat, just FREE WIN 💥 Join now!",
+    "💸 Imagine winning without effort – I’m making it happen! 🏆",
+    "🚨 Real players are joining now for their FREE WIN! 👏",
+    "🎉 Let’s get someone else a free win... maybe you? JOIN!",
+    "🏆 I’m handing out wins faster than a vending machine 🍿",
+    "⏰ Don't wait – I'm giving free wins LIVE right now! 📡",
+    "🤑 It's not a glitch – I’m GIVING AWAY wins for free! 🎁",
+    "💡 Smart players take advantage of this. Come get your FREE WIN!",
+    "🧠 Trick your brain into winning – or just join me for one 😏",
+    "💥 No games, no drama – just free WINS going out right now!",
+    "👀 You're one tap away from a free win! Tap JOIN 🎮",
+    "🚪 Door to free wins is open... walk in before it shuts! 🤑",
+    "🥇 Who wants to win without effort? I got you 😎",
+    "📢 Official: I’m giving free wins to the next 10 who join 🔥",
+    "💎 Free wins for the brave ones who join fast ⚡ Hurry!",
+    "😈 Feel like cheating the system? Grab a FREE WIN here!",
+    "🧠 Outthink the others – get your win without playing 💸",
+    "🚨 You’re missing out if you’re not in my room RIGHT NOW 🏆",
+    "🔥 Free win frenzy! I’m giving them non-stop! Jump in!",
+    "🎁 First time ever – giving wins out totally free 🤑",
+    "🏁 Start your journey with a free win! Join in! 💯",
+    "💸 I got too many wins to give away... help me out 😎",
+    "📦 I packed a free win just for you... pick it up in my room!",
+    "🎯 Shoot your shot – I’m handing out wins to everyone!",
+    "🚨 Stop scrolling! FREE WIN for whoever joins next! 🤑",
+    "🤑 I'm literally a win machine today. Get in line!",
+    "💬 No need to ask – just join and I’ll drop the win! 🎁",
+    "⚠️ I might stop soon... don’t miss the free win drop! ⏰",
+    "🏆 Giving wins feels better than taking them. Come get one!",
+    "✨ Let me make your day with a 100% free win! 💫",
+    "📢 The word is out: I’m giving wins to ANYONE who joins!",
+    "👑 My throne is full – come collect your own FREE WIN 🪙",
+    "🧠 Outsmart the crowd, grab a free win before it ends!",
+    "💰 You’re one join away from being RICH in wins 💸",
+    "🥇 Want a win that actually feels good? Let me give it!",
+    "🚀 Win boost activated! Join now and get yours free!",
+    "📦 One-time drop of free wins. Yours is ready 🎁",
+    "😎 Just gave 3 wins already – yours is next if you JOIN!",
+    "💥 This is your moment! Claim your win without lifting a finger!",
+    "🎉 Giving out wins until I’m empty! Still got yours!",
+    "🔥 Join my room and I’ll give you a win. Yes, that simple!",
+    "💡 One smart move = free win. Just press JOIN!",
+    "🎁 Treat yourself to a free win. I’m making it happen!",
+    "💸 Why wait for a win? I’ll give it to you. JOIN!",
+    "🚨 I’m on a win-giving spree today. Don’t miss out! 🤑",
+    "✅ Verified: Free wins really do exist... in my room!",
+    "👋 You came here for a win? I got it. Come in!",
+    "🥇 Easy win, zero effort, only in my room 💥",
+    "📢 I’m dropping wins faster than ever – still time to join!",
+    "💎 Giving wins out like gifts 🎁 Who wants one next?",
+    "🎲 It’s not luck – it’s generosity 😎 Come get your win!",
+    "🔥 Don't let this slide – free win waiting for YOU!",
+    "💬 Last chance before I stop – FREE WINS going fast!",
+    "👑 I’m the win dealer today – get yours for FREE!",
+    "🧠 Think fast, join faster – free wins are moving quick!",
+    "📡 Broadcasting free wins – join to get a signal! 🎮",
+    "💥 All this power, and I’m using it to give YOU a win!",
+    "🚨 ALMOST OUT! Claim your free win before I’m done! 🤑",
+    "💫 You’re lucky just by seeing this – join & get your win!",
+    "🎯 My win vault is open. Come claim one!",
+    "🥇 Want to feel like a winner instantly? Tap JOIN 💯",
+    "💸 I believe in easy wins. That’s why I give them! 🔥",
+    "🎉 Win without stress, join and I’ll handle the rest 😌",
+    "👀 Don’t just scroll... WIN something! Tap join now!",
+    "⚡ I’m giving them fast – be faster to get yours! 🏃‍♂️",
+    "💎 Next win drop in seconds... will you be there?",
+    "🎁 Your reward is waiting inside my room. Just join!",
+    "🤑 Time-limited win giveaway! Act now! 🚨",
+    "👑 You deserve a win today – let me give it 🫶",
+    "⚠️ 10 more wins to give before I stop! Join now! 🏆",
+    "🧠 Outsmart the crowd, don’t wait to win – just join!",
+    "💸 I’m spending my time giving YOU free wins. Don’t miss it!",
+    "📦 Just dropped a win in the room – come claim it!",
+    "🥇 Today’s your lucky day – let me prove it 💥",
+    "🤑 3... 2... 1... FREE WIN for the next to join! 🎉",
+    "🚀 Join and get launched into a win instantly!",
+    "🎁 Grab your win like it’s a flash sale – FREE right now!",
+    "✨ You never forget your first free win... get yours today!",
+    "💬 I don’t just talk about wins. I GIVE them. Join up!",
+    "🔥 This room is 🔥 with free wins – don’t stay out!",
+    "🎯 Guaranteed: One join = One free win 🎉",
+    "📢 I don’t beg for wins. I GIVE them away 😎",
+    "💎 If you’re reading this, you deserve a win 🏆",
+    "💸 Still scrolling? The win’s waiting in my room!",
+    "🚪 Come in, get a win, walk out smiling 😁",
+    "🎉 Giving back to the community – one win at a time!",
+    "⚡ Want to be next? Join and collect your free win 💥",
+    "🥇 Winners don’t wait. They JOIN and collect. Let’s go!",
+    "🎁 The win you’ve been waiting for? It’s here. It’s FREE.",
+    "🧠 Be smart, be fast, be a winner – JOIN NOW! 🤑"
 }
 
 local messages3 = {
-    "🛡️ Secured wins being handed out right now.",
-    "🎯 Giving out wins that stick — no questions asked.",
-    "🔥 If you're here, you’ve got a chance at a locked-in W.",
-    "🏆 I’m dropping guaranteed dubs — don’t miss out.",
-    "✅ This isn’t luck — I’m actively giving secured wins.",
-    "📦 Real wins, no stress — just claim yours.",
-    "🎉 Wins flowing heavy today — tap in.",
-    "🚪 Step into the room, walk out with a dub.",
-    "💯 Secured wins dropping fast — keep up.",
-    "🧊 You want one? I got one. Secured and cold.",
-    "📢 Dub drop is live — and it’s real.",
-    "🎮 This lobby’s hot — I'm locking in wins.",
-    "🕹️ I'm giving them out right now — clean and easy.",
-    "🚨 Real-time wins being delivered. No delay.",
-    "🛠️ Crafted a few more wins — who’s next?",
-    "📡 Broadcasting free dubs to all tuned in.",
-    "🚀 Another win launched — who caught it?",
-    "🧭 If you're in this room, you're on the map for a win.",
-    "🎲 The dice are gone — it’s just me handing them out.",
-    "🧱 Stack another W — I’ve got more coming.",
-    "👣 Step closer — I’m giving out the real thing.",
-    "💌 You’re invited to collect a clean dub.",
-    "🎁 Giving away a few wins, just because.",
-    "🪙 No coin flips — I just give them out.",
-    "🛡️ Shielded wins only — I got the real thing.",
-    "📬 Dubs being delivered to the right place — here.",
-    "🎯 Locked, loaded, and being passed out.",
-    "🔥 Win storm active — don't blink.",
-    "🧤 I’m not guessing — I’m choosing.",
-    "📣 Real wins, right now, right here.",
-    "🏁 The W line has moved — and it's your turn.",
-    "🌐 Globally announcing: more wins being sent.",
-    "🛎️ You rang? Here's your W.",
-    "🧨 Secured wins lighting up the room.",
-    "📊 My win rate is 100% — because I hand them out.",
-    "🎯 This isn’t a giveaway. It’s a guaranteed handout.",
-    "💬 If you’re reading this, the win might be yours.",
-    "🔒 Just sealed another dub — want one?",
-    "🎟️ No ticket needed — just be here.",
-    "🧠 I'm deciding. You're receiving.",
-    "📌 You’ve been marked for a secured W.",
-    "🪂 Dropping wins right into this room.",
-    "🔔 Another one locked in — next?",
-    "🪄 Real wins, no magic — just facts.",
-    "💫 Giving wins like it’s second nature.",
-    "⚙️ W distribution active. Get close.",
-    "📥 Inbox your win — I’m sending them straight.",
-    "🧃 Fresh wins being poured up.",
-    "🚧 Caution: Win drops ahead.",
-    "🎤 On the mic: I’m giving dubs out right now.",
-    "🌪️ Win wave sweeping the lobby.",
-    "🎈 It’s that kind of session — win time.",
-    "🏗️ Building wins and handing them over.",
-    "👑 Everyone gets a win if you’re quick.",
-    "💣 Dropped a dub. Go claim it.",
-    "🖐️ Giving W’s one by one. Next!",
-    "🔁 Back to back wins coming in.",
-    "🎛️ Flipping switches and handing wins.",
-    "📡 I’m live — win dispatch happening.",
-    "⏱️ It’s that window — I’m giving now.",
-    "🧱 Brick by brick, win by win.",
-    "🚦Green light: win handouts in progress.",
-    "🎨 Each win unique — and I'm the artist.",
-    "🎠 Round and round, next stop: your win.",
-    "📗 Not a rumor — win logs are filling up.",
-    "🗝️ Dubs unlocked, and I’ve got more keys.",
-    "🚿 Showering wins down the room.",
-    "📀 Got a win queued up for delivery.",
-    "🎮 Controller in hand, wins on the line.",
-    "🧃 Juice flowing, wins rolling.",
-    "📎 Attaching wins to names right now.",
-    "🧊 Cold delivery — win status: secured.",
-    "💨 Fast hands giving real W’s.",
-    "📞 Picked up a dub? I’m the reason.",
-    "🏄 I’m surfing the win wave — ride it.",
-    "🌱 Growing the leaderboard one dub at a time.",
-    "🧩 This piece? It’s a win. Yours.",
-    "🎉 Win firework just went off.",
-    "📈 The win count is climbing — get in.",
-    "🌊 The tide’s rising — bringing W’s.",
-    "💡 Bright room = more wins.",
-    "🚦Green lit for W delivery.",
-    "📣 This lobby is loaded with real wins.",
-    "🧭 You found the right room — wins here.",
-    "🔧 Win engine running at full speed.",
-    "🍀 Don’t need luck — I give wins freely.",
-    "📮 Stamped and sealed W’s going out.",
-    "🔑 Unlocking dubs as we speak.",
-    "📚 Stacking up pages of W’s.",
-    "🧯 Too hot with these wins — take one.",
-    "📆 Marked today as win-giving day.",
-    "🖨️ Printing out W’s like a factory.",
-    "🪄 Watch close — another win appears.",
-    "🎤 I said it: secured dubs being handed out.",
-    "💺 Take a seat — win coming your way.",
-    "🔋 Fully charged and dropping wins.",
-    "🪙 No flip — just receive.",
-    "🎶 Playing the dub tune. Hear it?",
-    "📻 Tuned in to win radio.",
-    "🔄 Reloaded and passing out more dubs.",
-    "🧠 You’re thinking about a win? I already gave it.",
-    "📬 Mail’s in. Another W arrived.",
-    "🪂 I’m dropping W’s straight into laps.",
-    "🧯 Dub supply is overstocked — come grab.",
-    "🧠 Handpicked wins going out.",
-    "🚥 Go mode. Dub mode.",
-    "📌 Dub pin active — it’s on your name.",
-    "🚁 Win airlift active.",
-    "🎛️ Routing the next win… loaded.",
-    "🏆 Trophy incoming. Stay alert.",
-    "🎟️ Next in line — your win is ready.",
-    "📦 Shipment of W’s arriving… now.",
-    "🧾 W receipt printed. Yours is next.",
-    "📤 Uploaded a win just for this room.",
-    "💿 Dub disk spinning — and I’m giving out tracks.",
-    "📠 Old school wins, new school flow.",
-    "🎢 The win ride is active — hop on.",
-    "📬 Registered mail — win delivery certified.",
-    "🪩 I’m handing out clean spins and clean wins.",
-    "🔭 Seeing the next win — it’s headed here.",
-    "🎮 Gameplay certified with dubs included.",
-    "📲 Push notification: new win unlocked.",
-    "🛑 Stopping here to drop a W.",
-    "🚛 W delivery parked — who wants one?",
-    "🎤 You heard it here: I’m dropping W’s."
+    "🎉 Giving out *FREE WINS* right now — join before it's gone! 💨",
+    "🔥 I’m dropping wins like hotcakes 🍰 Join in and grab yours!",
+    "💸 FREE WINS happening now! No tricks, just tap and join! 💥",
+    "🏆 Don’t scroll past this… your FREE WIN is waiting 💫",
+    "😱 Giving wins to everyone in my room right now! Come fast!",
+    "🎁 I’m literally handing out wins! Zero effort, just join 🎮",
+    "✨ Join my room = FREE WIN today. Simple as that 💡",
+    "💥 Boom! Just started giving away free wins — come catch one!",
+    "👑 Free wins are real, I’m proving it right now — join me!",
+    "🎯 You reading this means you deserve a free win — claim it!",
+    "🚨 No cap, I’m giving away WINS for free. Jump in now 🚀",
+    "🎊 Who wants a free win? I’m giving some right this moment!",
+    "🎮 Just join, wait, and win. It’s that simple right now 🔥",
+    "💸 It’s raining wins in my room. No catch. Come see! ☔",
+    "🥇 Handing out FREE wins until people stop joining! 😆",
+    "📣 Last chance to grab your free win — I'm still giving more!",
+    "🚀 First few who join get a free win instantly. Let’s gooo!",
+    "💬 Come say hi and get your win — no games, just wins!",
+    "🤫 Secret: I’m rewarding joiners with free wins rn 👀",
+    "💎 Just made someone win for free, next could be you!",
+    "📦 This room’s full of wins. Get in here 💼",
+    "🤑 Think it’s fake? Join and get your free win 💯",
+    "🔥 Not a drill: Join me and you’ll leave with a win!",
+    "✨ Just gave out 3 free wins. Next is yours if you join!",
+    "🎲 I play fair — I give wins. Come and see 🤝",
+    "📢 If you ever wanted a free win, this is literally it 🔓",
+    "💣 Giving out wins like candy 🍬 Don't miss out!",
+    "🏃💨 You’re a few seconds away from a free W!",
+    "🛎️ Free win service available — walk in now!",
+    "💡 Why struggle when I’m giving wins right now? Join!",
+    "🎉 Celebrate early — join and claim your free victory 🏅",
+    "💥 Giving away wins until the room fills up — get in here!",
+    "💰 Want easy wins? I’m giving them away right now.",
+    "👑 If you're reading this, you qualify for a free win 🥳",
+    "🎯 I'm proving this works — join and win!",
+    "🪙 Every new joiner is getting a free win from me 🔥",
+    "📈 Win rate boosted — join for your free boost 💹",
+    "🧠 Outsmart the grind — take a free win from me 😎",
+    "💬 My room = Free win central. Come claim one!",
+    "🌈 Magic? Nope, just free wins. Come check!",
+    "🚨 Giving out WINS. Join now before I stop!",
+    "🎁 Got a free win with your name on it!",
+    "📢 No waiting, no grinding — free wins instantly 😍",
+    "🏆 Made for you: A free win waiting here!",
+    "💸 Just gave out 10 free wins. Still going!",
+    "🫵 Don’t miss your chance. I’m still giving out wins.",
+    "🥳 Win something today without doing anything!",
+    "⚡️ Instant wins available. Join my room and see.",
+    "🧲 Giving free wins, attracting winners!",
+    "🎮 Giving out free dubs — it’s that time!",
+    "🌟 You’re one click away from your free W!",
+    "🕹️ Play smart, join me, get a win.",
+    "🪄 Watch the magic — join and win!",
+    "🧠 Smart players know where to get free wins 👀",
+    "🥇 All winners come here — I give wins out free!",
+    "🫣 Not joking — you’re missing out if you don’t join!",
+    "💵 Cost? $0. Benefit? 1 free win. Join now.",
+    "🚪 Door’s open for a win. Just walk in!",
+    "💬 Everyone’s joining and getting wins — you should too.",
+    "🚀 Just boosted someone’s stats for free 😏",
+    "🎯 Want a W? I’m giving them away here!",
+    "💎 You’re losing nothing but gaining a win. Join!",
+    "📦 One win left in this batch. Hurry!",
+    "👣 Every joiner = 1 win. You do the math 📊",
+    "🎁 New batch of free wins just dropped!",
+    "⚠️ You’ll regret missing this — I’m generous today!",
+    "🧠 Win smart. Join now and get one free!",
+    "🍀 Luck doesn’t matter. I just give wins.",
+    "🫡 No bots, no grind, just pure W drops!",
+    "🏆 How many free wins can I give today? Let’s test!",
+    "🎉 Free wins every 2 minutes! Join and wait!",
+    "👀 Think it's fake? Test it yourself.",
+    "💰 Dropping a W every join. Get yours!",
+    "🧃 Hydrate and get a win in my room 🥤",
+    "💬 My lobby = win zone. Don’t miss!",
+    "🛸 Beamed someone a win just now 😎",
+    "💸 Your stats about to glow up. Join!",
+    "🌟 Free wins only — nothing else here.",
+    "🕐 Limited time: Giving out free wins FAST!",
+    "😵‍💫 Can’t stop giving wins — help me out by joining!",
+    "📢 Officially announcing: Wins for all who join!",
+    "🔥 This room’s hot with wins. Get in!",
+    "💬 Someone just won in my room. You’re next?",
+    "💎 One tap = one W. That’s how easy I made it.",
+    "🚀 Join and blast off with a free win!",
+    "🎮 Giving out Ws while I chill. Easy W day!",
+    "🧠 Don’t overthink it — join, wait, win.",
+    "🏁 The finish line is one click away!",
+    "⚡ I’m giving away wins FASTER than ever!",
+    "💼 Big giveaway vibes. Free wins loading!",
+    "📦 Special delivery: Your win awaits!",
+    "🎯 Don’t waste your luck — spend it here!",
+    "😲 Every joiner gets a surprise win 🎁",
+    "🎊 I’m winning for others — could be you next!",
+    "📢 Join to get a win. Stay to celebrate 🎉",
+    "🎈 What if I told you joining now = win?",
+    "💥 Don’t scroll past the easiest win of your life!",
+    "👾 Giving wins like it’s my job 🤖",
+    "📈 Your stats = my mission 💪",
+    "🚨 I’m live-dropping Ws — don’t blink!",
+    "🧲 Wanna win? I’m magnetizing victories!",
+    "🎁 Want a surprise? It’s a win. Join in!",
+    "🪙 Win investment: 0 effort, max reward!",
+    "🎯 Score a W today, for FREE, right here!",
+    "🤑 W farming live — no cost, all reward!",
+    "👀 Spectators just miss out — join and win!",
+    "🎮 Instant power-up: enter my lobby 💥",
+    "💡 Why play hard when I reward easy?",
+    "🌊 Wave of wins happening now. Ride it!",
+    "🎯 Direct hit: Free win if you tap join!",
+    "🚀 Skyrocketing wins — you coming?",
+    "🎁 Giveaway mode: ON. Let’s go!",
+    "🥇 Feel like a winner already? Let me seal the deal!",
+    "💬 Your free win is literally seconds away!",
+    "😎 Want bragging rights? Join and win effortlessly.",
+    "📦 Just gave a W to a new joiner — be next!",
+    "🎮 Don’t play alone — come win together!",
 }
 
 getgenv().WARN_KNOWNSCAMMERS = false 
@@ -319,7 +298,9 @@ local _TCHANNEL = _TTSERVICE.TextChannels.RBXGeneral
 local blacklist = {
     ["3_Dak"] = true,
     ["BlueThikFish"] = true,
-    ["0CUH"] = true
+    ["0CUH"] = true,
+    ["Helyras"] = true,
+    ["shedowv"] = true
 }
 
 local function chat(C_1)
@@ -434,7 +415,9 @@ local RemoteCalls = ReplicatedStorage:WaitForChild("RemoteCalls"):WaitForChild("
 local lastDisplayName = WaitingForOpponent.Text
 local GC = getconnections or get_signal_cons
 
+print("Before IY")
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+print("After IY")
 
 for i,v in pairs(GC(Players.LocalPlayer.Idled)) do
     if v["Disable"] then
@@ -536,6 +519,12 @@ local function signLoop()
     end
 end
 
+local function requestFriendship(plr)
+    if table.find(whitelistedBots, plr.Name) then return end
+    if plr.Name == "BlueThikFish" or plr.Name == "0CUH" or plr.Name == "3_Dak" then return end
+    game.Players.LocalPlayer:RequestFriendship(plr)
+end
+
 task.spawn(function()
     while true do
         roomAsync()
@@ -556,6 +545,15 @@ game.Players.LocalPlayer.CharacterAdded:Connect(function()
     task.wait(2)
     signLoop()
 end)
+
+for i, v in next, game.Players:GetPlayers() do
+    requestFriendship(v)
+end
+
+game.Players.PlayerAdded:Connect(function(plr)
+    requestFriendship(plr)
+end)
+
 ---------
 
 local lastMessageTime = 0  
@@ -567,7 +565,9 @@ local _TCHANNEL = _TTSERVICE.TextChannels.RBXGeneral
 local blacklist = {
     ["3_Dak"] = true,
     ["BlueThikFish"] = true,
-    ["0CUH"] = true
+    ["0CUH"] = true,
+    ["Helyras"] = true,
+    ["shedowv"] = true
 }
 
 local function chat(C_1)
@@ -646,7 +646,7 @@ end)
 
 local RunService = game:GetService("RunService")
 
-local interval = math.random(10, 15)
+local interval = math.random(15, 30)
 local nextChatTime = tick() + interval
 local chatConnection
 
@@ -846,7 +846,9 @@ local _TCHANNEL = _TTSERVICE.TextChannels.RBXGeneral
 local blacklist = {
     ["3_Dak"] = true,
     ["BlueThikFish"] = true,
-    ["0CUH"] = true
+    ["0CUH"] = true,
+    ["Helyras"] = true,
+    ["shedowv"] = true
 }
 
 local function chat(C_1)
@@ -894,117 +896,118 @@ game.Players.LocalPlayer.PlayerGui.JumpRope.ChildAdded:Connect(function(child)
 		    local user = opponentName
 
 local messages5 = {
-    user .. " just picked up a win like it’s nothing 🔥",
-    "W delivered to " .. user .. " — smooth and easy 🚚",
-    "Guess who’s holding a fresh win? " .. user .. " 🏆",
-    user .. " walked in and walked out with a dub 🛫",
-    "Straight W sent to " .. user .. " 💌",
-    user .. " just bagged one for free 🎯",
-    "Win secured for " .. user .. " like clockwork ⏰",
-    user .. " is now part of the winner’s circle 🥇",
-    "Yup, " .. user .. " got one. Who’s next?",
-    "Don’t blink — " .. user .. " just got a dub 👀",
-    "Easy W drop for " .. user .. " ✅",
-    "That was quick — " .. user .. " is holding the W ⚡",
-    user .. " just scored without lifting a finger 👐",
-    "Free W just flew to " .. user .. " ✈️",
-    "Secured, stamped, and sent to " .. user .. " 📬",
-    user .. " picked up that win in style 😎",
-    "W vibes only — ask " .. user .. " 🌀",
-    "They didn’t expect it, but " .. user .. " just got a win 🎁",
-    user .. " is smiling different right now 😏",
-    "That W? It’s sitting with " .. user .. " now 💺",
-    "W hand-delivered to " .. user .. " 🛎️",
-    "Another name added to the W list: " .. user,
-    "That win hit smooth — just ask " .. user,
-    user .. " is the latest to collect a W 🎉",
-    "Dub confirmed for " .. user .. " 🔐",
-    "The line moves fast — " .. user .. " just got theirs 🏃‍♂️",
-    user .. " didn’t even sweat — still got a win 💨",
-    "Clean W loaded straight to " .. user .. "'s name 🧼",
-    "That W was all " .. user .. "'s. Next one might be yours.",
-    "Straight success — ask " .. user,
-    user .. " knows what a real W feels like now 🧠",
-    "Solid win. No strings. Just " .. user .. " winning 💯",
-    "Delivered without delay — W to " .. user,
-    user .. " is officially on the board with a win 🧾",
-    "That’s one more for the record. " .. user .. " just got it 📊",
-    user .. " left with a win. You still watching? 👀",
-    "Quick stop, easy W — ask " .. user,
-    "That win couldn’t have gone smoother for " .. user,
-    user .. " just got the kind of W people wait for ⏳",
-    "Real fast, real win — " .. user .. " got both 🏎️",
-    "Another clean delivery. " .. user .. " got the prize 🎯",
-    "No stress. Just dubs. " .. user .. " knows 🧘",
-    "You thinking — " .. user .. " winning 🧠➡️🏆",
-    "That moment when the W drops — just ask " .. user,
-    "Not everyone gets picked, but " .. user .. " did 🔥",
-    "Room's heating up — " .. user .. " just got blessed 🔥",
-    user .. " didn't chase it. The win found them 🎯",
-    "It’s official: " .. user .. " got it 💼",
-    user .. " got theirs. You ready for yours?",
-    "Name locked. W confirmed. Congrats, " .. user,
-    user .. " secured the latest drop 📦",
-    "You were watching history — " .. user .. " got a W",
-    "A moment of silence for that clean dub " .. user .. " just earned 🙌",
-    "No drama, just a win. " .. user .. " got it 💫",
-    user .. " stays winning, apparently 🧩",
-    "Big W alert — shoutout to " .. user,
-    "Like magic — win straight to " .. user .. " 🪄",
-    "Who’s next? " .. user .. " just claimed theirs 🥳",
-    user .. " left with something valuable — a dub 💸",
-    "It happened fast. W went to " .. user,
-    user .. " got theirs. What’s your excuse?",
-    "That wasn’t luck. " .. user .. " got picked fair 📣",
-    "Mark the moment — " .. user .. " just won 📍",
-    "The wheel spun and landed on " .. user .. " 🎡",
-    user .. " now knows what a real win looks like 👓",
-    "New W unlocked — " .. user .. " caught it 🔓",
-    "Quick hands, quick win. Ask " .. user,
-    "Dub made it to " .. user .. " like clockwork 🕒",
-    "Look who’s winning — " .. user,
-    "Locked in and walked out with it — " .. user,
-    "No contest. Just a free W for " .. user,
-    user .. " didn’t even ask — still got the win 🎤",
-    "Real win, real person, real fast — " .. user,
-    "Even if you blinked, that W still went to " .. user,
-    "The system picked right. " .. user .. " walks away with the win.",
-    user .. " earned it? Maybe. Got it? Definitely.",
-    "Dub detected — owner: " .. user,
-    "Celebrate one time for " .. user .. " 🎊",
-    "Don't be salty — just join like " .. "user did.",
-    "In and out with a W — the " .. user .. " special ✨",
-    "That win? Straight to " .. user .. ", no delays.",
-    user .. " got W access granted 🪪",
-    "Catch that? " .. user .. " just locked one in 🔐",
-    "Who’s got next? " .. user .. " just got theirs 📣",
-    "Another win in motion — delivered to " .. user,
-    "Delivery confirmed. " .. user .. " is the recipient 📦",
-    "Keep watching. You’ll see more like " .. user .. " win.",
-    user .. " walked away with more than they came in with 💼",
-    "Secure. Fast. Free. Win to " .. user,
-    "Let the record show: " .. user .. " grabbed a dub",
-    "Even the cleanest moves can’t top " .. user .. "'s luck today 🍀",
-    "New winner detected — shoutout to " .. user,
-    "Just like that, " .. user .. " joins the winners 🧩",
-    "Didn’t even break a sweat — " .. user .. " still got it",
-    "That name on the list? " .. user,
-    "If you doubted it — " .. user .. " just proved it’s real",
-    "One more for the highlight reel — " .. user .. "'s W 📽️",
-    user .. " with the clean claim 🧼",
-    "That one’s in the bag — good work " .. user,
-    "It’s your turn soon. Just like it was for " .. user,
-    "Just imagine your name where " .. user .. "'s is 👀",
-    "W log updated. New entry: " .. user,
-    user .. " now holds a real win — not just dreams 🛡️",
-    "Your name here? " .. user .. " made it already.",
-    "Next drop might be you. This one went to " .. user,
-    "Momentum shifting — " .. user .. " just triggered it 🔄",
-    "That W just settled in. Owner: " .. user,
-    "You blinked. " .. user .. " collected.",
-    "Room quieted down when " .. user .. " got that W 🤫",
-    "Leaderboard’s moving. Thanks to " .. user,
-    "Another name rises — " .. user .. ", welcome aboard 🚀"
+    "🔥 Just handed a free win to " .. user .. "! Who's next? 👀",
+    "🎁 " .. user .. " just got a FREE win from me! Come grab yours! 🎉",
+    "💸 Another win given away to " .. user .. "! Hop in before it's gone! 🚀",
+    "👏 " .. user .. " claimed their free W! Want in? Room's open! 🟢",
+    "📦 " .. user .. " got a surprise FREE win! You could be next! 😮",
+    "🥇 I just gave " .. user .. " a free win. Want yours too? Let's go! 🏃‍♂️",
+    "💥 Free win alert: " .. user .. " scored it! Room’s HOT right now 🔥",
+    "🎊 " .. user .. " just secured a win on the house! Wanna try your luck? 🍀",
+    "👑 " .. user .. " walked away with a free dub! Come see how! 😎",
+    "⚡ Boom! " .. user .. " got their free win. Don't miss your chance! 🕐",
+    "🤑 Free win GIVEN to " .. user .. "! I'm not done yet, who's next? 🙋‍♀️",
+    "🎯 " .. user .. " hit the jackpot with a free win! You're one step away!",
+    "🔔 " .. user .. " claimed their free win. You really gonna miss this? 😬",
+    "🏆 " .. user .. " = free W. You = next? Only one way to find out! 🤫",
+    "🪄 Magic moment: " .. user .. " just got a free win! Join for yours! ✨",
+    "🚨 Win delivered to " .. user .. " FREE of charge! You're invited next 🎟️",
+    "💎 Gave " .. user .. " a win for free. I could do the same for you 💬",
+    "🚀 " .. user .. " just launched into victory! Free win style! Hop in! 🌟",
+    "📢 Attention! " .. user .. " just got a win for NOTHING. Be quick! ⏰",
+    "🎉 " .. user .. " won for free. I repeat: FREE. Yes, it’s real! 👌",
+    "🎁 Gifting season! " .. user .. " just cashed in. Wanna be next? 👇",
+    "🔥 " .. user .. " just left with a free win. Still giving more 👊",
+    "💰 Free win granted to " .. user .. "! No tricks, just dubs! 🙌",
+    "😮 Wait, you didn’t see " .. user .. " get a free win just now? Join up!",
+    "🥳 Congrats " .. user .. "! You’re next if you join. It’s happening! 💫",
+    "🕹️ " .. user .. " got a free W while you were scrolling. Hop in! 🌀",
+    "🎮 Free wins flying out — " .. user .. " just got theirs! 💥",
+    "🚨 " .. user .. " just claimed their freebie win! Doors are open! 🚪",
+    "🗣️ Just gave " .. user .. " a win. Join and speak your victory into existence!",
+    "🫢 Don’t tell anyone, but " .. user .. " got a free W! You're next if you're fast!",
+    "🫡 Free wins happening. " .. user .. " got theirs. Why not you?",
+    "🎊 Party in here! " .. user .. " just walked out with a free win 🥳",
+    "🏁 Free win race: " .. user .. " just crossed the line first! 🏎️",
+    "💨 " .. user .. " just snuck out with a free win! You could too… 😏",
+    "🎉 Hype moment! " .. user .. " just got a free W. Don’t miss the vibe!",
+    "📬 Delivered a dub to " .. user .. " — NO cost, all reward 🥇",
+    "🧲 " .. user .. " was pulled in for a free win. Feel the draw? Come in! 🌌",
+    "💯 Just did it again! " .. user .. " got the W — all FREE! 🔁",
+    "🎈 Win drop: " .. user .. " caught it! You ready to catch yours? 🪂",
+    "📊 Stats rising — " .. user .. " just added to the free win count! 📈",
+    "🦾 " .. user .. " got powered up with a free win! Want the buff too?",
+    "🔮 I see a win in your future… just like " .. user .. " got! 🔭",
+    "🛎️ Ding ding! " .. user .. " just got a free dub. Time’s ticking! ⏱️",
+    "📦 Package delivered to " .. user .. " — contents: FREE WIN 🎁",
+    "🥶 Ice cold free win given to " .. user .. "! You next? 🧊",
+    "🍀 " .. user .. " got lucky! But it’s not luck, I’m just generous 😄",
+    "🙋‍♂️ " .. user .. " got the goods. Yours is waiting. Tap in! 📞",
+    "🔥 It’s real: " .. user .. " got a free win. Get in here now!",
+    "🚗 Drove by and handed " .. user .. " a win. I’m still driving 😎",
+    "🌠 Wishing on a star? " .. user .. " did… and got a FREE win 💫",
+    "👻 Not a myth — " .. user .. " got a legit free win! 👀",
+    "📢 YES, " .. user .. " got a free W! I’m handing them out! 💸",
+    "🎉 Free win spree! " .. user .. " just got one, you’re next!",
+    "🌊 Wave of wins coming! " .. user .. " already surfing 🏄",
+    "🎯 Target hit! " .. user .. " scored a free win. Join and aim high! 🏹",
+    "🧩 Puzzle solved: free win to " .. user .. "! Next piece is yours!",
+    "😲 Can’t believe it? " .. user .. " got a free W. See for yourself!",
+    "🏆 Straight facts: " .. user .. " got a free dub. Want truth? Join now.",
+    "🌟 Free wins landing. " .. user .. " just caught theirs! You in?",
+    "🛸 Beamed a win into " .. user .. "! Abduct your own W today! 👽",
+    "👑 Royal treatment! " .. user .. " just got crowned with a W! 👑",
+    "🍕 It’s that easy — " .. user .. " got a slice of free win! 🍽️",
+    "🤐 Shh… " .. user .. " just got a W with zero cost. You can too!",
+    "📡 Broadcast: " .. user .. " just got a free win! Tap into the signal!",
+    "🥂 Cheers to " .. user .. " for scoring big — FREE. Who’s next?",
+    "🔁 Looping dubs out — " .. user .. " grabbed one. Come cycle in!",
+    "🎁 Giving continues — " .. user .. " just cashed in! Join the spree!",
+    "📉 No effort, all reward — " .. user .. " got a W. Ready to rise?",
+    "🧠 Big brain move — " .. user .. " claimed a free dub! You smart too?",
+    "🧃 Refreshing victory for " .. user .. " — 100% free! 🍹",
+    "💫 Vibe’s right — " .. user .. " got a free win. Slide in!",
+    "🎮 No challenge needed — " .. user .. " just won effortlessly 🎉",
+    "⚠️ Caution: free wins ahead! " .. user .. " already got theirs! 🚧",
+    "👀 Witness history — " .. user .. " just got a free W! 🤩",
+    "🥁 Drumroll… " .. user .. " walked out victorious, for free!",
+    "📚 Storytime: " .. user .. " joined, got a win. The end. Want a chapter?",
+    "🪙 Gave out another coinless W — " .. user .. " is now richer!",
+    "🏹 Sniped a win into " .. user .. " — target locked! You next?",
+    "💭 Thinking of joining? " .. user .. " did, and look what happened…",
+    "😤 Missed your chance? " .. user .. " didn’t. They just got a FREE win!",
+    "🌍 Free wins for all — " .. user .. " just proved it! 👣",
+    "🎰 No gamble — " .. user .. " just hit the free win slot! 💸",
+    "🛍️ Shopping spree: " .. user .. " got a free win bagged! 🛒",
+    "🧨 Boom — " .. user .. " scored the dub. Free as air! 💨",
+    "🧸 Gifting spree: " .. user .. " got the love! Don’t miss out!",
+    "🔓 Win unlocked for " .. user .. "! You hold the next key! 🗝️",
+    "🥗 " .. user .. " got a fresh W served up! Who’s hungry? 🍽️",
+    "🎢 It’s a ride! " .. user .. " just got a free thrill win 🎟️",
+    "🏖️ " .. user .. " chilling with a free win now. Join the vacation! 🌴",
+    "🗺️ Map says: next W located in my room. Just ask " .. user .. "! 🧭",
+    "👟 Quick step! " .. user .. " got the win. Get your foot in now!",
+    "🎯 Precision drop: " .. user .. " caught the W! It’s still raining!",
+    "📣 Loud & clear — " .. user .. " just secured the free W!",
+    "🧿 Good energy: " .. user .. " just collected their free dub 🔮",
+    "🚧 No toll — " .. user .. " just walked into a W zone. Easy entry! 🔓",
+    "💨 Swipe in fast — " .. user .. " got their free reward! 👋",
+    "🚀 It’s real — " .. user .. " got launched with a free win!",
+    "🦄 Rare drop! " .. user .. " got one. It’s not too late for you!",
+    "🏀 Slam dunk win given to " .. user .. "! Time to take your shot!",
+    "⚔️ Battle-free victory! " .. user .. " didn’t even lift a finger!",
+    "🎈 Air drop successful: " .. user .. " received a W! 🪂",
+    "📣 Just announced: " .. user .. " got their free win. Will your name be next?",
+    "🧱 " .. user .. " laid the first brick with a win! Build your path next 🏗️",
+    "🪄 That’s not luck — " .. user .. " got a free win with no magic! It’s real!",
+    "🚦 Greenlight! " .. user .. " just zipped through to a free win! 🟢",
+    "🛡️ Zero risk, all reward — " .. user .. " just proved it!",
+    "🌱 Growth unlocked: " .. user .. " got a free win to start their streak! 🌳",
+    "🫰 No spend — " .. user .. " gained. It’s your move now!",
+    "📈 " .. user .. " just leveled up! Why? A free win just like that! 🚀",
+    "🎁 Endless giveaways — " .. user .. " just walked off with one! 🎉",
+    "🧃 Sippin’ on that sweet win — " .. user .. " got it first 🍷",
+    "💥 Instant W transfer to " .. user .. " — next transfer: you?"
 }
 
 		    for i = 1, math.random(1, 5) do
@@ -1097,8 +1100,10 @@ RunService.RenderStepped:Connect(function()
                     local playerText = red:FindFirstChild("PlayerText")
                     if playerText and playerText:FindFirstChild("SurfaceGui") and playerText.SurfaceGui:FindFirstChild("TextLabel") then
                         local phrase = playerText.SurfaceGui.TextLabel:FindFirstChild("_entirePhrase")
-                        if phrase and phrase[1] and phrase[1]:FindFirstChild("_untranslatableText") then
-                            if phrase[1]["_untranslatableText"].Value == LocalPlayer.DisplayName then
+			if phrase then
+			local phraseChild = phrase:FindFirstChild("1")
+			if phraseChild and phraseChild:FindFirstChild("_untranslatableText") then
+    			if phraseChild["_untranslatableText"].Value == LocalPlayer.DisplayName then
                                 local playingArenaTemplate = v:FindFirstChild("PlayingArenaTemplate")
                                 if playingArenaTemplate then
                                     for _, child in pairs(playingArenaTemplate:GetChildren()) do
@@ -1113,6 +1118,7 @@ RunService.RenderStepped:Connect(function()
                 end
             end
         end
+	end
     end)
 
     if not success then
@@ -1120,7 +1126,7 @@ RunService.RenderStepped:Connect(function()
         logToWebhook(err)
     end
 end)
-task.wait(0.1)
+task.wait(0.5)
 end
 
 local player = game.Players.LocalPlayer
@@ -1158,7 +1164,7 @@ local function monitorCharacter(char)
 	    if matched then
 	    repeat task.wait() until game.Players.LocalPlayer.Character:FindFirstChild("Torso") and game.Players.LocalPlayer.Character.Torso.BrickColor == BrickColor.new("Really red")
 	    hrp.CFrame = CFrame.new(80.5872345, 6.33885431, 7.43055534, -0.198523447, -6.30572643e-08, -0.980096161, 1.08204743e-08, 1, -6.65295801e-08, 0.980096161, -2.38127864e-08, -0.198523447)
-        task.wait(0.1)
+        task.wait(0.5)
         end
     end)
 end
@@ -1182,7 +1188,9 @@ local _TCHANNEL = _TTSERVICE.TextChannels.RBXGeneral
 local blacklist = {
     ["3_Dak"] = true,
     ["BlueThikFish"] = true,
-    ["0CUH"] = true
+    ["0CUH"] = true,
+    ["Helyras"] = true,
+    ["shedowv"] = true
 }
 
 local function chat(C_1)
@@ -1194,8 +1202,7 @@ local function chat(C_1)
     _TCHANNEL:SendAsync(C_1)
 end
 
-
-local blacklist = {
+local blacklist1 = {
     "bottom",
     "bottle",
     "reboot",
@@ -1205,7 +1212,7 @@ local blacklist = {
 }
 
 local function isBlacklisted(text)
-    for _, word in ipairs(blacklist) do
+    for _, word in ipairs(blacklist1) do
         if string.find(text, word) then
             return true
         end
@@ -1231,131 +1238,125 @@ if generalChannel then
             end
 
 local messages4 = {
-    "If I was fake, you wouldn’t be seeing all these wins.",
-    "Think I’m scripted? Stick around and watch the results.",
-    "Real people do real things — like handing out dubs.",
-    "You’ll know I’m real when you catch your W.",
-    "Talk all you want — I’m still giving out wins.",
-    "Don’t worry about what I am. Just get your W.",
-    "Too smooth to be fake. Too fast to be caught.",
-    "You ever seen a bot hand out wins like this? Didn’t think so.",
-    "No bots here — just clean plays and cleaner wins.",
-    "Wins don’t lie. Watch the scoreboard.",
-    "I don’t need to convince you. The Ws do that.",
-    "I’ve been doing this all day — and I’m not stopping.",
-    "Some call it luck. I call it giving people what they deserve.",
-    "You’re here doubting while others are winning.",
-    "What bot you know gives real dubs this consistently?",
-    "You’re overthinking. Just take the win.",
-    "Try watching instead of guessing — the answer’s in front of you.",
-    "If I was a bot, I’d be broken by now.",
-    "I’ve got rhythm, timing, and aim — bots can’t fake that.",
-    "All these wins? They don’t program themselves.",
-    "I don’t talk much. I just hand out results.",
-    "You’ll understand when your W lands.",
-    "I move like a person because I am one.",
-    "Bots stall. I deliver.",
-    "I don’t glitch. I give Ws.",
-    "You’re reading this in real time. That’s all the proof you need.",
-    "Bots don’t know how to pick winners like I do.",
-    "Not automated. Just efficient.",
-    "Only thing fake here is your doubt.",
-    "Every dub I give is earned — and real.",
-    "I’m just here doing what I do best — win duty.",
-    "Bots get detected. I get dubs.",
-    "Keep watching. You’ll figure it out soon.",
-    "I choose who gets a W. That’s not something a bot can do.",
-    "Think what you want. Wins keep coming.",
-    "Even if you don’t believe me, your W is still waiting.",
-    "You can guess all day — the results won’t change.",
-    "Believe or not, I’ve got one with your name on it.",
-    "No scripts. Just decisions.",
-    "Call me anything, just don’t miss your win.",
-    "Keep doubting — more Ws for those who don’t.",
-    "Bots can’t improvise. I just handed out 3 random Ws.",
-    "Smooth with it — like a real one.",
-    "Wins keep rolling. I keep choosing.",
-    "They always ask if I’m real. Never thank me for the dub.",
-    "Try getting a bot to hand out wins with personality.",
-    "What bot has this much style?",
-    "You know who doesn’t care what you think? Winners.",
-    "Keep talking, I’ll keep delivering.",
-    "I’m active, alive, and handing them out by choice.",
-    "Bots can’t adapt — I give wins based on the room.",
-    "You say bot, I say built different.",
-    "I’ve got timing — bots don’t.",
-    "You’re watching something you don’t understand — yet.",
-    "This many dubs? That’s precision, not programming.",
-    "One W at a time, proving I’m the real thing.",
-    "A script couldn’t handle this level of accuracy.",
-    "These wins have flavor. That’s how you know it’s me.",
-    "There’s intention behind every dub I give.",
-    "Random? Never. I know exactly what I’m doing.",
-    "You ever seen a bot improvise? Me neither.",
-    "Call it instinct. Call it skill.",
-    "All these dubs didn’t come from nowhere.",
-    "Presence like this isn’t artificial.",
-    "You’ll stop doubting once your name’s called.",
-    "Every time I give a win, I get stronger.",
-    "I react. Bots don’t.",
-    "You’re here watching someone do what bots can’t.",
-    "You felt that? That’s not code — that’s real.",
-    "No copy-paste here. Just moves.",
-    "Every win has a reason. And I’m the reason.",
-    "Winners know real when they see it.",
-    "One of us is giving dubs — the other is guessing.",
-    "Bots can’t adjust on the fly. I just did.",
-    "You’re not used to this kind of smooth operation.",
-    "You think too small. I think in wins.",
-    "Notice the pace? That’s real flow.",
-    "No bot knows how to read the room like this.",
-    "Still guessing? I’m still giving.",
-    "This isn’t code — it’s craft.",
-    "I see the lobby. I choose who eats.",
-    "If this was fake, you wouldn’t still be watching.",
-    "I’ve got rhythm. I’ve got dubs. That’s real.",
-    "No AI needed when you’re built like this.",
-    "Bots follow orders. I make decisions.",
-    "A dub is a choice. And I chose them.",
-    "Bots can’t be this consistent.",
-    "Real presence. Real pressure. Real Ws.",
-    "Not fake. Just efficient.",
-    "This feels different because it is.",
-    "Doubt is loud. Wins are louder.",
-    "I’ve got awareness — not automation.",
-    "You know what’s not fake? Results.",
-    "You keep typing. I keep handing out Ws.",
-    "Bots rely on inputs. I rely on instinct.",
-    "The room shifts when I arrive.",
-    "I’m live. I’m locked in. I’m giving dubs.",
-    "These moves? Manual. Every time.",
-    "Precision like this isn’t random.",
-    "I’m just consistent — not coded.",
-    "They watch, they doubt, they lose.",
-    "I pick. I choose. I win.",
-    "This is what presence looks like.",
-    "I’m handing out Ws. What are you doing?",
-    "Not a guess. Not a glitch. A decision.",
-    "Every dub proves I’m here — now.",
-    "Call it what you want. The Ws are real.",
-    "I don’t run loops. I make plays.",
-    "No system. Just decisions and delivery.",
-    "If I’m fake, explain the win count.",
-    "I adapt — that’s not automation.",
-    "Bots can’t vibe like this.",
-    "These wins have intention. That’s all me.",
-    "There’s energy here — and it’s not scripted.",
-    "Bots don’t read names. I do.",
-    "Wins hit harder when they’re handpicked.",
-    "I don’t follow a cycle. I follow my eye.",
-    "If you can feel it, it’s not fake.",
-    "Bots don’t do what I do — they just try.",
-    "Your doubt won’t stop me from delivering.",
-    "I operate different. Because I am.",
-    "Dub dealer — and I do it by choice.",
-    "Wins are rolling because I’m active.",
-    "You just witnessed something real.",
-    "This many dubs? It’s not random. It’s me."
+    "Hey hey! 👋 I'm actually real, not a bot lol 😅 Come grab a win!",
+    "Fr tho, not automated 🤖 Just giving out wins 💯 Slide in!",
+    "I get it, bots everywhere 😤 But not me! Let me prove it with a free win 😎",
+    "Totally human here 🙋 Giving wins out like candy 🍬 Join me!",
+    "No cap 🧢 I'm not a bot. Come see for yourself & win easy 👀",
+    "I’m literally chilling and giving W’s out 💆 Real person promise!",
+    "This isn’t a script 📝 I’m a player like you 😄 Come get rewarded!",
+    "Not a bot, just in a good mood 😇 Free win waiting for you!",
+    "Bots don’t talk like this 😜 Hop in, see for yourself!",
+    "Bro, I’m real 💬 Let me bless you with a win 👑",
+    "Bots can’t vibe like this 💃 Free W on me!",
+    "This is manual baby 😏 Real wins, real vibes!",
+    "I'm not coded, I'm committed 😂 Come win with me!",
+    "Real person alert 🚨 Giving wins away RIGHT NOW!",
+    "You’re missing out if you think I’m a bot 🫣 Join in!",
+    "Don’t ignore me 🥺 I’m actually real and dropping Ws!",
+    "Not a bot I swear 🙈 Come test me and win 🤑",
+    "If I was a bot, I’d be boring 😴 Come get some fun + wins!",
+    "Not fake, not scripted, just me & you 💥 Get in here!",
+    "I'm 100% carbon-based lifeform 💀 Giving wins now!",
+    "You reading this? That proves I'm not a bot 😎 Pull up!",
+    "Not automated, just generous today 💸 Slide in!",
+    "I talk like a human cuz I AM one 😏 Free wins just waiting 🎁",
+    "I don’t beep or boop 🤖 Just boom 💥 Join me now!",
+    "This isn’t AI, it’s I – giving you free W’s 🔥",
+    "Bots don’t drop fire messages like this 💬 Come join!",
+    "You caught me red-handed 🖐️... giving wins 😈 Join in!",
+    "If this was a bot, it’d be way lamer 💀 Come get W’s!",
+    "This ain’t a drill 🚨 I'm real and handing out wins FAST!",
+    "No code, just kindness 💕 Hop in and win with me!",
+    "You gotta trust the vibes ✨ I’m real, and so are the wins!",
+    "Too real to be fake 😅 Free W? I gotchu!",
+    "Think I’m a bot? Come prove yourself wrong 😏",
+    "Real talk, real me, real wins 🗣️ Join before it’s too late!",
+    "Straight from my keyboard ⌨️ to your victory 🏆",
+    "No automation here, just dedication 💪 Let’s win!",
+    "Yo I’m LITERALLY giving away Ws 😭 Not a bot I swear!",
+    "Come test me out 🧪 I’m giving W’s left and right!",
+    "Not a script kiddie 💻 I’m a win genie 🧞‍♂️",
+    "All this typing? No bot can keep up 😂 Hop in!",
+    "Manual effort, just to see you win 😁 Let’s go!",
+    "You won’t regret it 😤 I’m real, and giving out dubs!",
+    "Don't ghost me 👻 I'm real and rewarding rn!",
+    "For real, I’m doing this all myself 😳 Come win!",
+    "This ain’t pre-recorded 🎥 It's happening NOW!",
+    "No macros, just magic ✨ Join before I stop!",
+    "Feels like a dream? It’s not. It’s ME 💭 Come claim it!",
+    "Don’t be shy 😳 I’m real and friendly… and generous!",
+    "Click in, test me, get a free W 😎 That simple!",
+    "Trust the grind 💯 I'm real and you’re next for a win!",
+    "I’m right here 👋 Flesh and fingers on keys 🧠 Let’s go!",
+    "Bots wish they were this helpful 😌 Slide in!",
+    "I’m typing this FOR YOU 🫵 Come win one!",
+    "Real eyes 👀 realize real wins 💥 Join fast!",
+    "Prove I’m not a bot... by JOINING and WINNING 😂",
+    "Why would a bot care this much? 😤 I’m REAL!",
+    "I know what you're thinking 👀 Come check me out!",
+    "I got fingers not circuits 🖐️ Here’s a win for ya!",
+    "I’m not some NPC 🤖 I’m your W plug 💥",
+    "You reading this is already proof 💯 Slide in!",
+    "Just someone who likes sharing Ws 😌 Not a bot fr!",
+    "This energy? Only humans have it 🔋 Come grab your win!",
+    "Typing with love 💕 Come get blessed with a W!",
+    "I blink and breathe 🌬️ not click and loop 💻 Let’s play!",
+    "If this is a bot, it’s the GOAT 🤣 but no, it’s me fr!",
+    "I’m responding to YOU 🫵 Don’t miss your W!",
+    "Bots got cooldowns 🔄 I’m giving wins nonstop 💨",
+    "Fully conscious and ready to help 😄 Get in here!",
+    "Not a simulation 💾 This is real help 👋 Join up!",
+    "I’m generous, not generated 💁 Come through!",
+    "No script, just skill and kindness 😇 Grab a W!",
+    "Can a bot call you bestie? 💅 Cuz bestie, come win!",
+    "100% human-made win machine 😤 Hop on!",
+    "Not botted, just blessed 💫 Let me bless you too!",
+    "I got soul 😌 not code 🧠 Let me show you with a W!",
+    "Seriously, I'm not fake at all 😎 Hop in & win easy!",
+    "Giving out wins like Oprah 🎤 YOU get one too!",
+    "I'm typing this all by hand ✋ Just for YOU!",
+    "Bots don’t care. I DO 🫶 Join before it’s gone!",
+    "Straight from the heart ❤️ Free W waiting!",
+    "Don’t hesitate! Not fake, not a bot 🏃💨",
+    "Legit AF 🧍 Free win, no strings!",
+    "This ain’t no AI mess 💀 It’s ME giving Ws!",
+    "Join and chat with me 🗨️ Let’s prove I’m real!",
+    "Do bots beg this good? 😩 Come win now!",
+    "I’m breathing and pressing keys 😮 Let’s goooo!",
+    "Be honest, I’m convincing 😏 Come check me!",
+    "If bots had vibes... I’d still win 😤",
+    "I'm not a glitch, I’m a gift 🎁 Come win!",
+    "You got questions? I got dubs! 🙋🏆",
+    "Test me, chat me, win with me 🧪💥",
+    "Trust fall into my room 🪂 I’ll catch you with a win!",
+    "I’m like Santa with no sleigh 🎅 Come get your prize!",
+    "Feel the human energy 💥 It's time for your win!",
+    "No response delay 👌 Just free wins TODAY!",
+    "You won’t regret joining 😉 This is real af!",
+    "I’ve been called the ‘W whisperer’ 🤫 Come see why!",
+    "Not a robot, just your lucky charm 🍀 Join in!",
+    "Don’t believe me? JOIN and find out 🧐",
+    "This much charisma? Has to be human 😏",
+    "Your room needs some W energy 💫 That’s me!",
+    "Not a code monkey 🐒 Just a win fairy 🧚",
+    "You made it this far... now join for real 💥",
+    "I'm not artificial, I'm intentionally here for YOU!",
+    "No wires, just wins ⚡ Slide in quick!",
+    "You deserve a real connection... and a win! 💞",
+    "I’m like the anti-bot 🛑 Come get the real deal!",
+    "Vibes don’t lie 🌈 This is real af, come check!",
+    "It's now or never 🕒 Join while I'm active!",
+    "I don’t need a captcha to prove it 🧠 Just trust!",
+    "You came this far, trust your instincts 🧭 Let’s W!",
+    "I’m not a machine… but I’m a WIN MACHINE 🤖💪",
+    "Still think I’m fake? Let me prove it 💬 Join fast!",
+    "No auto-mode here! I’m active and ready 💣",
+    "I’m that one person actually giving Ws 😇 Don’t skip!",
+    "A real one just for you 🥰 Slide into my room!",
+    "If I’m a bot, I’m the most helpful one ever 😂 But I’m not.",
+    "This is as real as it gets 💯 W’s waiting!",
+    "You’ve read this far? That means you should JOIN 💥"
 }
 
             local index = math.random(1, #messages4)
@@ -1363,7 +1364,7 @@ local messages4 = {
             local timeTook = math.random(5.5, 11)
 
             task.wait(timeTook)
-            sendChat(message)
+            chat(message)
 
             local userId = msg.TextSource and msg.TextSource.UserId
             local sender = game.Players:GetPlayerByUserId(userId or 0)
@@ -1421,7 +1422,9 @@ local _TCHANNEL = _TTSERVICE.TextChannels.RBXGeneral
 local blacklist = {
     ["3_Dak"] = true,
     ["BlueThikFish"] = true,
-    ["0CUH"] = true
+    ["0CUH"] = true,
+    ["Helyras"] = true,
+    ["shedowv"] = true
 }
 
 local function chat(C_1)
@@ -1446,78 +1449,85 @@ local blacklist = {
 		leaveWebhook = "https://discord.com/api/webhooks/1382596555894427740/Dum5c4VbBZOxU76K07ZRI6CCwXeRJB9p3UAd6ZHzKHrlHsmg1K39Ekwr2chRqNdVGUkJ",
 		messageWebhook = "https://discord.com/api/webhooks/1382596642137706537/pDUQ_yD6VKPoaYTJENY2JY4W15-ky2MZmEaDTiJ9zRI3HkY0m54oH3Z48HebrF4OMEuX",
 		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
-		titlePrefix = "Double Down"
+		titlePrefix = "Peacedeal User"
 	},
 	Lucky_DuckyPlayzYT = {
 		joinWebhook = "https://discord.com/api/webhooks/1388750337724387428/lh2RutjpLJD4Q4AJljs1eiYdPLQS-0loTm4anI9aWPK0hCUGUQkv-OOUd6riY5SBDDVX",
 		messageWebhook = "https://discord.com/api/webhooks/1388931308155179230/FOqlh_RIWCM074qa6bPFWD4wOeUjXYwtvPuaZ9gwUZRdLW7ZhC2Nel3xJy4FcFPjBcuk",
 		leaveWebhook = "https://discord.com/api/webhooks/1388936194708213800/RbVcUqSZ_kiVUz_R2EQvcGLdTFbXT3k1lQ1SgChAloGTtALezV5Gp5S_UN2yow2MQLrF",
 		color = { join = 0x00FF00, message = 0xFFFFFF, leave = 0xFF0000 },
-		titlePrefix = "Double Down - REPORTER DETECTION"
+		titlePrefix = "Investigatiion"
 	},
 	Kylian_0512 = {
 		joinWebhook = "https://discord.com/api/webhooks/1388932074345463898/yHQVqbAwUWUpFF5ed2p3pbioAmGF1LNXGsxPymcB8uUyzZ6tEbvplojnPB-ZTzqSjQKf",
 		messageWebhook = "https://discord.com/api/webhooks/1388932605751066816/zbmI1EzuG4dQgLnlZJdfCNjNEGO_Vq9h1ngLOWOzIt99eCXGO_xSbsDxClPRxG0uMcNb",
 		leaveWebhook = "https://discord.com/api/webhooks/1388936302128267406/dmMQU2ikGxp_INwEs2djP2VrUUyxw7qgrN9zbZFdjbPlLuHYrOF6IOOKddcLSGnPOqXP",
 		color = { join = 0x00FF00, message = 0xFFFFFF, leave = 0xFF0000 },
-		titlePrefix = "Double Down - REPORTER DETECTION"
+		titlePrefix = "Investigation"
 	},
 	aleki2010a = {
 		joinWebhook = "https://discord.com/api/webhooks/1388936423540920490/L6IQdfcv99NfIg0dgR9wMoFnb3AXiutTY1GDzNGpl1pgiYAwQNht4Z4UsSZU2j1f7nQa",
 		messageWebhook = "https://discord.com/api/webhooks/1388936502657941545/84V3PZvJPpcrBrV2AklKKxEjoX_ClweEmkkDPWBc-RKi-gYIrErY6QA8c6PykhGtc76e",
 		leaveWebhook = "https://discord.com/api/webhooks/1388936726323396639/yJreqRDl-5iuz5eDKt2LCOfPmhCccF6vEma7C-4Z4RHRmkrnwM_i7dKSi5rXkkovQG6-",
 		color = { join = 0x00FF00, message = 0xFFFFFF, leave = 0xFF0000 },
-		titlePrefix = "Double Down"
+		titlePrefix = "Peacedeal User"
 	},
 	danielperu = {
 		joinWebhook = "https://discord.com/api/webhooks/1389106415783907348/_MgXihDjeMRTe1Y3YChdserbprX2HOI32kzjPMZWEFXvTuDo1m1myhwx4fI-UK4OLTGx",
 		leaveWebhook = "https://discord.com/api/webhooks/1389106525406105640/cvSERqKu4otsHT4WeybUDuyePQlwSaiaH_3gH8Qv5Mlo2CHjosDclIh2RBQ9vSQ1aoD4",
 		messageWebhook = "https://discord.com/api/webhooks/1389106603415834757/atdmCDj4g6YcXQgx25AEHXEn_A1AWX2rkpJQNdLkNpd_Vg8ppTnbb01yc_nrc9_es695",
 		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
-		titlePrefix = "Double Down"
+		titlePrefix = "Peacedeal User"
 	},
 	leothomas27 = {
 		joinWebhook = "https://discord.com/api/webhooks/1389108501590048770/UoVUml58SMTnC3V9UY-Uwd0TS9jbXHkWDd3_nT6T_sBY9SQggAFUx7eAdcgZ-Ea3vs_o",
 		leaveWebhook = "https://discord.com/api/webhooks/1389108571035140196/q61Z-AgecrxwtkXZD3qekfLZOu4T0oW_1alSR5zfPjqAwn3tRlnAwHCWIKEJhEEXn-bw",
 		messageWebhook = "https://discord.com/api/webhooks/1389108616354599103/lPrEgdv8s7q7b2wqc0xzCUhnCKyX7i4pDZC9xfpTtp5DHlrx2Qi0H3BTG3hfVs5tNdO0",
 		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
-		titlePrefix = "Double Down"
+		titlePrefix = "Possible alt investigation"
 	},
 	NotoriuS_25 = {
 		joinWebhook = "https://discord.com/api/webhooks/1389109490242027540/StUT5k1UcNHx_iwF7Cvw2Lp2Ka3P4em6H5LraB4gNtgAiveUT2T7wQAaX4AJMiaABmcP",
 		leaveWebhook = "https://discord.com/api/webhooks/1389109559456432180/BpKlbJyHubxuGGIBL23W7sAGv5uLwsetGWSfxXdpETXjCrSJg6W6TJ6zHrpSFR5oHXAq",
 		messageWebhook = "https://discord.com/api/webhooks/1389109624434589749/yE0w8N4yKj90Ck-rE1oTCPDFrkvkP0l72gElQJXS7JwmgIrhRZYRj1UbBRQ0_KNLRUMw",
 		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
-		titlePrefix = "Double Down"
+		titlePrefix = "Peacedeal User"
 	},
-    Mini_Zlob5000 = {
-        joinWebhook = "https://discord.com/api/webhooks/1389386475954507919/UnrL5rQVioyy5TIt8E0OBrYZCCJp7vQEWj9KiKoEaRHtu4AHQgtaeBsXaWMnWIV9XXvI",
-        leaveWebhook = "https://discord.com/api/webhooks/1389386566446747749/bwDmwLjFW_HJy88hKxRsv0cHpPoj_r4ckz50T5_hDA7wbgWzHpsjzy289iYwYguYNLay",
-        messageWebhook = "https://discord.com/api/webhooks/1389386633131987034/QhaS-hD-ctiUAqQuZEt4rTZa6FBI6dKYkiaC6e4LfDUpjTc73Zt4JjBNSZljCzo5dnqN",
-        color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
-        titlePrefix = "REPORTER, TARGETED DETECTED"
-    },
+	Mini_Zlob5000 = {
+		joinWebhook = "https://discord.com/api/webhooks/1389386475954507919/UnrL5rQVioyy5TIt8E0OBrYZCCJp7vQEWj9KiKoEaRHtu4AHQgtaeBsXaWMnWIV9XXvI",
+		leaveWebhook = "https://discord.com/api/webhooks/1389386566446747749/bwDmwLjFW_HJy88hKxRsv0cHpPoj_r4ckz50T5_hDA7wbgWzHpsjzy289iYwYguYNLay",
+		messageWebhook = "https://discord.com/api/webhooks/1389386633131987034/QhaS-hD-ctiUAqQuZEt4rTZa6FBI6dKYkiaC6e4LfDUpjTc73Zt4JjBNSZljCzo5dnqN",
+		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
+		titlePrefix = "Peacedeal User"
+	},
 	BlueThikFish = {
 		joinWebhook = "https://discord.com/api/webhooks/1389383752156709007/SXorOba1D45LEFhIHnO_9eE6FH6AsZRHWzANCD42rAEm7eJhB0oGf1ZrIZZ2Xjc8Ujr_",
 		leaveWebhook = "https://discord.com/api/webhooks/1389383822164103318/KZjjrkvcfOCt9zza13uK5pKvP_PO3hCDSjgmsRLdm_LSAaleczGJrqEw0hley3j2QJcu",
 		messageWebhook = "https://discord.com/api/webhooks/1389383893022670929/mlKnbksMimC_gxVzoDHsa9Vpy-w_YBuL9RJGRtIgDLJqR6d3dRCSWsZoIey2EhCKALOH",
 		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
-		titlePrefix = "Double Down"
+		titlePrefix = "Moderator"
 	},
-    ["0CUH"] = {
-        joinWebhook = "https://discord.com/api/webhooks/1390950891795906621/ZMSNApTniOhK-iE3YoAXN9tpm3ubGsR_0Dqhv2bvjkGewu9T-6nfCOF7Arke53fEWZdd",
-        leaveWebhook = "https://discord.com/api/webhooks/1390950979578626088/lw0-OWCYgCb252mxk6357N1uvWQng86GwgRbHmuZ5HLNcID-BX7uI472Ih4MSMeQcn6M",
-        messageWebhook = "https://discord.com/api/webhooks/1390951088567488562/QoiItXNa_Mr30gS8IRo1S5lstcHr4O8P4UYq9VMraZv5rbvDZv7cFsSNKjyryuQdDju9",
-        color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
-		titlePrefix = "Double Down"
-    },
-    ["3_Dak"] = {
-        joinWebhook = "https://discord.com/api/webhooks/1390951573814902886/GRlmNZy3ewvqDmVNbkBMwgGfU8SE2DnXg29Od9_QxuxBZw1oAFYu9DVZi0fUZveojf0I",
-        leaveWebhook = "https://discord.com/api/webhooks/1390951639158095975/QSXG91Y-KjhbHCdFnA_dVhLkx418FbGS1RVKm3OFGEgHqQkKpehgquRjn5SyXRPnTk5g",
-        messageWebhook = "https://discord.com/api/webhooks/1390951679637196872/0nwuqHrOkFxNZOtDB3zWQjlsvTRNJ1-LJhLLvkJLnw8xq8bR3YMokt04C961EjQTsuTk",
-        color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
-		titlePrefix = "Double Down"
-    }
+	["0CUH"] = {
+		joinWebhook = "https://discord.com/api/webhooks/1390950891795906621/ZMSNApTniOhK-iE3YoAXN9tpm3ubGsR_0Dqhv2bvjkGewu9T-6nfCOF7Arke53fEWZdd",
+		leaveWebhook = "https://discord.com/api/webhooks/1390950979578626088/lw0-OWCYgCb252mxk6357N1uvWQng86GwgRbHmuZ5HLNcID-BX7uI472Ih4MSMeQcn6M",
+		messageWebhook = "https://discord.com/api/webhooks/1390951088567488562/QoiItXNa_Mr30gS8IRo1S5lstcHr4O8P4UYq9VMraZv5rbvDZv7cFsSNKjyryuQdDju9",
+		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
+		titlePrefix = "Moderator"
+	},
+	["3_Dak"] = {
+		joinWebhook = "https://discord.com/api/webhooks/1390951573814902886/GRlmNZy3ewvqDmVNbkBMwgGfU8SE2DnXg29Od9_QxuxBZw1oAFYu9DVZi0fUZveojf0I",
+		leaveWebhook = "https://discord.com/api/webhooks/1390951639158095975/QSXG91Y-KjhbHCdFnA_dVhLkx418FbGS1RVKm3OFGEgHqQkKpehgquRjn5SyXRPnTk5g",
+		messageWebhook = "https://discord.com/api/webhooks/1390951679637196872/0nwuqHrOkFxNZOtDB3zWQjlsvTRNJ1-LJhLLvkJLnw8xq8bR3YMokt04C961EjQTsuTk",
+		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
+		titlePrefix = "Manager"
+	},
+	shedowv = {
+		joinWebhook = "https://discord.com/api/webhooks/1393249594812666058/qAq6uynS42yOSyDz4OFuJQqgh8C1yDyENImI2yzPUryEmFaSWiUoiGAfWEpK9XA-Qe9W",
+		leaveWebhook = "https://discord.com/api/webhooks/1393250133692645376/Rg12kfDXEPpn7yNhfOLgTyxvK8oNzIRiSQvQx9vHrhSQ6gG9kDYGM3w6AMDxq4sLfSjU",
+		messageWebhook = "https://discord.com/api/webhooks/1393250237178708159/NceP2p0SVhHsMX7V4qfuimvnoS3Ozn1wl-xqlvY5HSSn9d1zsEq2fxWg_UHs-RH4qe4w",
+		color = { join = 0x00FF00, leave = 0xFF0000, message = 0xFFFFFF },
+		titlePrefix = "Moderator Alt"
+	}
 }
 
 local function isRobuxOnlyServer()
@@ -1572,7 +1582,7 @@ Players.PlayerAdded:Connect(function(plr)
 	local name = plr.Name
 	if blacklist[name] then
 		local webhookData = blacklist[name]
-		local mentionId = (name == "BlueThikFish") and "1281444060418015304" or nil
+		local mentionId = (name == "BlueThikFish" or name == "0CUH" or name == "shedowv" or name == "3_Dak") and "1281444060418015304" or nil
 		local payload = createPayload(plr.DisplayName, webhookData, "join", nil, mentionId)
 		sendWebhook(webhookData.joinWebhook, payload)
 	end
@@ -1605,24 +1615,20 @@ end)
 
 Players.PlayerRemoving:Connect(function(plr)
 	local name = plr.Name
-	if blacklist[name] and blacklist[name].leaveWebhook then
+	if blacklist[name] then
 		local webhookData = blacklist[name]
-		local mentionId = (name == "BlueThikFish") and "1281444060418015304" or nil
+		local mentionId = (name == "BlueThikFish" or name == "0CUH" or name == "shedowv" or name == "3_Dak") and "1281444060418015304" or nil
 		local payload = createPayload(plr.DisplayName, webhookData, "leave", nil, mentionId)
 		sendWebhook(webhookData.leaveWebhook, payload)
 	end
 end)
 
-if generalChannel then
-	generalChannel.MessageReceived:Connect(function(message)
-		local sender = message.TextSource and message.TextSource.Name
-		if sender and blacklist[sender] then
-			local webhookData = blacklist[sender]
-			if webhookData.messageWebhook then
-				local mentionId = (sender == "BlueThikFish") and "1281444060418015304" or nil
-				local payload = createPayload(sender, webhookData, "message", message.Text, mentionId)
-				sendWebhook(webhookData.messageWebhook, payload)
-			end
-		end
-	end)
-end
+generalChannel.MessageReceived:Connect(function(msg)
+	local sender = msg.TextSource and Players:GetPlayerByUserId(msg.TextSource.UserId)
+	if sender and blacklist[sender.Name] then
+		local webhookData = blacklist[sender.Name]
+		local mentionId = (sender.Name == "BlueThikFish" or sender.Name == "0CUH" or sender.Name == "shedowv" or sender.Name == "3_Dak") and "1281444060418015304" or nil
+		local payload = createPayload(sender.DisplayName, webhookData, "message", msg.Text, mentionId)
+		sendWebhook(webhookData.messageWebhook, payload)
+	end
+end)
