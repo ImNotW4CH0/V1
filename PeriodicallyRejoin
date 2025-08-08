@@ -1,0 +1,50 @@
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
+if game.PlaceId == 104715542330896 then return end
+
+-- Load teleport-safety scripts on rejoin
+local loaderURL = "https://raw.githubusercontent.com/ImNotW4CH0/V1/refs/heads/main/loader"
+local anti1URL  = "https://raw.githubusercontent.com/ImNotW4CH0/V1/refs/heads/main/anti1"
+local anti2URL  = "https://raw.githubusercontent.com/ImNotW4CH0/V1/refs/heads/main/anti2"
+
+queue_on_teleport(string.format([[
+    loadstring(game:HttpGet("%s"))()
+    loadstring(game:HttpGet("%s"))()
+    loadstring(game:HttpGet("%s"))()
+]], loaderURL, anti1URL, anti2URL))
+
+task.wait(6072)
+
+local player = game.Players.LocalPlayer
+local jumpGui = player:FindFirstChild("PlayerGui") and player.PlayerGui:FindFirstChild("JumpRope")
+
+--[[ 
+if getgenv().kicktime then
+    repeat task.wait(1) until not getgenv().kicktime
+end 
+]]
+
+if jumpGui and jumpGui:FindFirstChild("Top Middle") then
+    repeat task.wait(1) until not jumpGui:FindFirstChild("Top Middle")
+end
+
+while #game.Players:GetPlayers() < 2 do
+    task.wait(1)
+end
+
+task.spawn(function()
+    local RemoteCalls = game.ReplicatedStorage:WaitForChild("RemoteCalls")
+    local destroyRoom = RemoteCalls:WaitForChild("GameSpecific"):WaitForChild("Tickets"):WaitForChild("DestroyRoom")
+    while true do
+        pcall(function()
+            destroyRoom:InvokeServer()
+        end)
+        task.wait(1)
+    end
+end)
+
+task.wait(2)
+
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, player)
